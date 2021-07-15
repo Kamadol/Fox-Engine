@@ -1,0 +1,2 @@
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Debug\Fox Engine.pdb
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Fox Engine\Debug\Fox Engine.pdb
