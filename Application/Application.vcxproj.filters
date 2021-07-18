@@ -19,4 +19,10 @@
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\solidColor.vert" />
+    <None Include="Shaders\solidColor.frag" />
+    <None Include="Shaders\rainbowColor.vert" />
+    <None Include="Shaders\rainbowColor.frag" />
+  </ItemGroup>
 </Project>

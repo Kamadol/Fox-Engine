@@ -158,11 +158,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Buffer.hpp" />
     <ClInclude Include="Source\Graphics.hpp" />
+    <ClInclude Include="Source\Renderable2D.hpp" />
+    <ClInclude Include="Source\Renderer2D.hpp" />
+    <ClInclude Include="Source\Shader.hpp" />
     <ClInclude Include="Source\Sprite.hpp" />
     <ClInclude Include="Source\Window.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Buffer.cpp" />
+    <ClCompile Include="Source\Renderer2D.cpp" />
+    <ClCompile Include="Source\Shader.cpp" />
     <ClCompile Include="Source\Sprite.cpp" />
     <ClCompile Include="Source\Window.cpp" />
   </ItemGroup>

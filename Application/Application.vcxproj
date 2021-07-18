@@ -26,6 +26,12 @@
       <Project>{8758d085-3cec-44d8-8ae6-df3469eb93bf}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\rainbowColor.frag" />
+    <None Include="Shaders\rainbowColor.vert" />
+    <None Include="Shaders\solidColor.frag" />
+    <None Include="Shaders\solidColor.vert" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

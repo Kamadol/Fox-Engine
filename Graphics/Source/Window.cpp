@@ -2,6 +2,9 @@
 
 #include <iostream>
 
+#include "Buffer.hpp"
+#include "Shader.hpp"
+
 Window::Window(size_t width, size_t height)
 	:m_width(width), m_height(height)
 {
@@ -19,24 +22,33 @@ Window::Window(size_t width, size_t height)
 
     std::cout << glGetString(GL_VERSION) << std::endl;
     
+    glfwSwapInterval(1);
 
     float triangle[6] =
     {
-        -0.5f, -0.5f,
-         0.0f,  0.5f,
-         0.5f, -0.5f
+        -1.0f, -1.0f,
+         0.0f,  1.0f,
+         1.0f, -1.0f
     };
 
-    size_t bufferId;
-    glGenBuffers(1, &bufferId);
-    glBindBuffer(GL_ARRAY_BUFFER, bufferId);
-    glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), triangle, GL_STATIC_DRAW);
+    //size_t bufferId;
+    //glGenBuffers(1, &bufferId);
+    //glBindBuffer(GL_ARRAY_BUFFER, bufferId);
+    //glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), triangle, GL_STATIC_DRAW);
+
+    Shader shader("../Application/Shaders/solidColor.vert", "../Application/Shaders/solidColor.frag");
+    shader.bind();
+    shader.setUniform4f("u_Color", Vector4(0.0f, 1.0f, 0.0f, 1.0f));
+
+    Buffer buffer(triangle, 6 * sizeof(float));
+    buffer.bind();
 
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0);
 
     while (!glfwWindowShouldClose(m_window))
     {
+        glClearColor(0.1f, 0.3f, 1.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         glDrawArrays(GL_TRIANGLES, 0, 3);
@@ -45,4 +57,11 @@ Window::Window(size_t width, size_t height)
 
         glfwPollEvents();
     }
+
+    glfwDestroyWindow(m_window);
+    glfwTerminate();
+}
+Window::~Window()
+{
+    glfwTerminate();
 }

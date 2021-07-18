@@ -2,7 +2,11 @@
 
 #include <iostream>
 
+Sprite::Sprite(Vector2 position, Vector2 size)
+{
+	
+}
 Sprite::Sprite()
 {
-	std::cout << Vector2::up() * Vector2::right() << std::endl;
+
 }
