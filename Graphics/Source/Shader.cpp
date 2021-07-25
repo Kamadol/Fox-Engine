@@ -16,7 +16,6 @@ Shader::Shader(const char* vertPath, const char* fragPath)
 	if (file.good())
 	{
 		vertexSource << file.rdbuf();
-		//std::cout << vertexSource.str() << std::endl;
 	}
 	else
 		std::cout << vertPath << " cannot be loaded" << std::endl;
@@ -26,7 +25,6 @@ Shader::Shader(const char* vertPath, const char* fragPath)
 	if (file.good())
 	{
 		fragmentSource << file.rdbuf();
-		//std::cout << fragmentSource.str() << std::endl;
 	}
 	else
 		std::cout << fragPath << " cannot be loaded" << std::endl;
@@ -47,9 +45,25 @@ void Shader::unbind() const
 	glUseProgram(0);
 }
 
+void Shader::setUniform1f(const char* uniformName, float v)
+{
+	glUniform1f(glGetUniformLocation(id, uniformName), v);
+}
+void Shader::setUniform2f(const char* uniformName, Vector2 v)
+{
+	glUniform2f(glGetUniformLocation(id, uniformName), v.x, v.y);
+}
+void Shader::setUniform3f(const char* uniformName, Vector3 v)
+{
+	glUniform3f(glGetUniformLocation(id, uniformName), v.x, v.y, v.z);
+}
 void Shader::setUniform4f(const char* uniformName, Vector4 v)
 {
 	glUniform4f(glGetUniformLocation(id, uniformName), v.x, v.y, v.z, v.w);
+}
+void Shader::setUniformMat4(const char* uniformName, const Mat4x4& v)
+{
+	//glUniformMatrix4fv(glGetUniformLocation(id, uniformName), v.vals[0]);
 }
 
 size_t Shader::compile(size_t type, const std::string source)

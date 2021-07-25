@@ -24,5 +24,9 @@
     <None Include="Shaders\solidColor.frag" />
     <None Include="Shaders\rainbowColor.vert" />
     <None Include="Shaders\rainbowColor.frag" />
+    <None Include="Shaders\solidColor_002.vert" />
+    <None Include="Shaders\solidColor_002.frag" />
+    <None Include="Shaders\testShader.vert" />
+    <None Include="Shaders\testShader.frag" />
   </ItemGroup>
 </Project>

@@ -3,7 +3,10 @@
 
 #include <string>
 
+#include "Vector2.hpp"
+#include "Vector3.hpp"
 #include "Vector4.hpp"
+#include "Mat4x4.hpp"
 
 class Shader
 {
@@ -14,7 +17,11 @@ public:
 	void bind() const;
 	void unbind() const;
 
+	void setUniform1f(const char* uniformName, float v);
+	void setUniform2f(const char* uniformName, Vector2 v);
+	void setUniform3f(const char* uniformName, Vector3 v);
 	void setUniform4f(const char* uniformName, Vector4 v);
+	void setUniformMat4(const char* uniformName, const Mat4x4 &v);
 
 private:
 	size_t compile(size_t type, const std::string source);

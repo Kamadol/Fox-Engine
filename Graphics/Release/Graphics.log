@@ -1,3 +1,2 @@
 ﻿  Window.cpp
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.hpp(11,37): error C2535: „Window::Window(size_t,size_t)”: Funkcja składowa już zdefiniowana lub zadeklarowana
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.hpp(10): message : zobacz deklarację „Window::Window”
+  Graphics.vcxproj -> C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Release\Graphics.lib

@@ -22,7 +22,11 @@ public:
 	static Mat4x4 diagonal(float diagonal);
 	static Mat4x4 identity();
 	static Mat4x4 translation(const Vector3& v);
-	static Mat4x4 rotation(float angle, const Vector3& axis);
+	static Mat4x4 rotation(const Vector3& axis, float angle);
+	static Mat4x4 rotation(const Vector3& eulerXYZ);
+	static Mat4x4 rotationX(float angle);
+	static Mat4x4 rotationY(float angle);
+	static Mat4x4 rotationZ(float angle);
 	static Mat4x4 scale(const Vector3& v);
 	static Mat4x4 orthographic(float left, float right, float bottom, float top, float near, float far);
 	static Mat4x4 perspective(float fov, float aspectRatio, float near, float far);

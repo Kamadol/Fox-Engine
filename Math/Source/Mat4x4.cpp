@@ -1,5 +1,12 @@
 #include "Mat4x4.hpp"
 
+/*
+|0 4  8 12|
+|1 5  9 13|
+|2 6 10 14|
+|3 7 11 15|
+*/
+
 Mat4x4::Mat4x4(float a)
 {
 	for (size_t i = 0; i < 16; i++)
@@ -38,7 +45,7 @@ Mat4x4 Mat4x4::translation(const Vector3& m)
 
 	return ret;
 }
-Mat4x4 Mat4x4::rotation(float angle, const Vector3& axis)
+Mat4x4 Mat4x4::rotation(const Vector3& axis, float angle)
 {
 	float sin = sinf(angle);
 	float cos = cosf(angle);
@@ -55,6 +62,78 @@ Mat4x4 Mat4x4::rotation(float angle, const Vector3& axis)
 	ret.vals[8] = axis.z * axis.x * (1.0f - cos) + axis.y * sin;
 	ret.vals[9] = axis.z * axis.y * (1.0f - cos) - axis.x * sin;
 	ret.vals[10] = axis.z * axis.z * (1.0f - cos) + cos;
+
+	ret.vals[15] = 1.0f;
+
+	return ret;
+}
+Mat4x4 Mat4x4::rotation(const Vector3& eulerXYZ)
+{
+	float sinX = sinf(eulerXYZ.x);
+	float cosX = cosf(eulerXYZ.x);
+	float sinY = sinf(eulerXYZ.y);
+	float cosY = cosf(eulerXYZ.y);
+	float sinZ = sinf(eulerXYZ.z);
+	float cosZ = cosf(eulerXYZ.z);
+
+	Mat4x4 ret;
+	ret.vals[0] =  cosY * cosZ;
+	ret.vals[1] =  cosX * sinZ + cosZ * sinX * sinY;
+	ret.vals[2] =  sinX * sinZ - cosX * cosZ * sinY;
+	ret.vals[4] = -cosY * sinZ;
+	ret.vals[5] =  cosX * cosZ - sinX * sinY * sinZ;
+	ret.vals[6] =  cosZ * sinX + cosX * sinY * sinZ;
+	ret.vals[8] =  sinY;
+	ret.vals[9] = -cosY * sinX;
+	ret.vals[10] = cosX * cosY;
+
+	ret.vals[15] = 1.0f;
+
+	return ret;
+}
+Mat4x4 Mat4x4::rotationX(float angle)
+{
+	float sin = sinf(angle);
+	float cos = cosf(angle);
+
+	Mat4x4 ret;
+	ret.vals[0] = 1.0f;
+	ret.vals[5] = cos;
+	ret.vals[6] = sin;
+	ret.vals[9] = -sin;
+	ret.vals[10] = cos;
+
+	ret.vals[15] = 1.0f;
+
+	return ret;
+}
+Mat4x4 Mat4x4::rotationY(float angle)
+{
+	float sin = sinf(angle);
+	float cos = cosf(angle);
+
+	Mat4x4 ret;
+	ret.vals[0] = cos;
+	ret.vals[5] = 1.0f;
+	ret.vals[6] = -sin;
+	ret.vals[9] = sin;
+	ret.vals[10] = cos;
+
+	ret.vals[15] = 1.0f;
+
+	return ret;
+}
+Mat4x4 Mat4x4::rotationZ(float angle)
+{
+	float sin = sinf(angle);
+	float cos = cosf(angle);
+
+	Mat4x4 ret;
+	ret.vals[0] = cos;
+	ret.vals[1] = sin;
+	ret.vals[5] = cos;
+	ret.vals[4] = -sin;
+	ret.vals[10] = 1.0f;
 
 	ret.vals[15] = 1.0f;
 

@@ -31,6 +31,10 @@
     <None Include="Shaders\rainbowColor.vert" />
     <None Include="Shaders\solidColor.frag" />
     <None Include="Shaders\solidColor.vert" />
+    <None Include="Shaders\solidColor_002.frag" />
+    <None Include="Shaders\solidColor_002.vert" />
+    <None Include="Shaders\testShader.frag" />
+    <None Include="Shaders\testShader.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
