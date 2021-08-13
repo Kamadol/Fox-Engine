@@ -17,11 +17,17 @@ public:
 	static Vector3 front();
 	static Vector3 back();
 
+	float length() const;
+	float lengthSqr() const;
+	Vector3 unit() const;
 	Vector3 multiplyElements(const Vector3& v) const;
 	Vector3 divideElements(const Vector3& v) const;
 	float dot(const Vector3& v) const;
 	Vector3 cross(const Vector3& v) const;
 
+	Vector3 operator-() const;
+	Vector3& operator*=(float a);
+	Vector3& operator/=(float a);
 	Vector3& operator+=(const Vector3& v);
 	Vector3& operator-=(const Vector3& v);
 	Vector3 operator+(const Vector3& v) const;

@@ -17,11 +17,12 @@ public:
 	void bind() const;
 	void unbind() const;
 
+	void setUniform1i(const char* uniformName, int v);
 	void setUniform1f(const char* uniformName, float v);
 	void setUniform2f(const char* uniformName, Vector2 v);
 	void setUniform3f(const char* uniformName, Vector3 v);
 	void setUniform4f(const char* uniformName, Vector4 v);
-	void setUniformMat4(const char* uniformName, const Mat4x4 &v);
+	void setUniformMat4(const char* uniformName, const Mat4x4 &m);
 
 private:
 	size_t compile(size_t type, const std::string source);

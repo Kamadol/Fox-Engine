@@ -10,6 +10,7 @@ public:
 	Transformable();
 
 	Mat4x4 getTransform() const;
+	Mat4x4 getInvTransform() const;
 
 	void setPosition(Vector3 position);
 	void move(Vector3 offset);

@@ -14,6 +14,13 @@ Mat4x4::Mat4x4(float a)
 		this->vals[i] = a;
 	}
 }
+Mat4x4::Mat4x4(float* v)
+{
+	for (size_t i = 0; i < 16; i++)
+	{
+		vals[i] = v[i];
+	}
+}
 Mat4x4::Mat4x4()
 {
 	for (size_t i = 0; i < 16; i++)
@@ -114,9 +121,9 @@ Mat4x4 Mat4x4::rotationY(float angle)
 
 	Mat4x4 ret;
 	ret.vals[0] = cos;
+	ret.vals[2] = -sin;
 	ret.vals[5] = 1.0f;
-	ret.vals[6] = -sin;
-	ret.vals[9] = sin;
+	ret.vals[8] = sin;
 	ret.vals[10] = cos;
 
 	ret.vals[15] = 1.0f;
@@ -139,12 +146,12 @@ Mat4x4 Mat4x4::rotationZ(float angle)
 
 	return ret;
 }
-Mat4x4 Mat4x4::scale(const Vector3& m_V)
+Mat4x4 Mat4x4::scale(const Vector3& v)
 {
 	Mat4x4 ret;
-	ret.vals[0] = m_V.x;
-	ret.vals[5] = m_V.y;
-	ret.vals[10] = m_V.z;
+	ret.vals[0] = v.x;
+	ret.vals[5] = v.y;
+	ret.vals[10] = v.z;
 	ret.vals[15] = 1.0f;
 
 	return ret;
@@ -175,6 +182,20 @@ Mat4x4 Mat4x4::perspective(float fov, float aspectRatio, float near, float far)
 
 	return ret;
 }
+Mat4x4 Mat4x4::lookAt(Vector3 position, Vector3 target, Vector3 up)
+{
+	Vector3 direction = (position - target).unit();
+	Vector3 right = (up ^ direction).unit();
+	Vector3 cameraUp = direction ^ right;
+
+	Mat4x4 view;
+	view.vals[0] =     right.x; view.vals[4] =     right.y; view.vals[8]  =     right.z; view.vals[12] = -right * position;
+	view.vals[1] =  cameraUp.x; view.vals[5] =  cameraUp.y; view.vals[9]  =  cameraUp.z; view.vals[13] = -cameraUp * position;
+	view.vals[2] = direction.x; view.vals[6] = direction.y; view.vals[10] = direction.z; view.vals[14] = -direction * position;
+	view.vals[3] =        0.0f; view.vals[7] =        0.0f; view.vals[11] =        0.0f; view.vals[15] =                  1.0f;
+
+	return view;
+}
 
 Mat4x4 Mat4x4::operator+(const Mat4x4& m)
 {
@@ -199,6 +220,23 @@ Mat4x4 Mat4x4::operator-(const Mat4x4& m)
 	return ret;
 }
 Mat4x4 Mat4x4::operator*(const Mat4x4& m)
+{
+	Mat4x4 ret;
+
+	for (size_t i = 0; i < 4; i++)
+	{
+		for (size_t j = 0; j < 4; j++)
+		{
+			for (size_t k = 0; k < 4; k++)
+			{
+				ret.vals[j + i * 4] += vals[j + k * 4] * m.vals[i * 4 + k];
+			}
+		}
+	}
+
+	return ret;
+}
+Mat4x4 Mat4x4::operator*(const Mat4x4& m) const
 {
 	Mat4x4 ret;
 

@@ -68,10 +68,21 @@ float Vector2::dot(const Vector2& v) const
 	return x * v.x + y * v.y;
 }
 
+Vector2 Vector2::operator-() const
+{
+	return Vector2(-x, -y);
+}
 Vector2& Vector2::operator*=(float a)
 {
 	x *= a;
 	y *= a;
+
+	return *this;
+}
+Vector2& Vector2::operator/=(float a)
+{
+	x /= a;
+	y /= a;
 
 	return *this;
 }

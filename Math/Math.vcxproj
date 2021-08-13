@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="Source\Mat4x4.hpp" />
     <ClInclude Include="Source\Math.hpp" />
+    <ClInclude Include="Source\Quaternion.hpp" />
     <ClInclude Include="Source\Utility.hpp" />
     <ClInclude Include="Source\Vector2.hpp" />
     <ClInclude Include="Source\Vector3.hpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Mat4x4.cpp" />
+    <ClCompile Include="Source\Quaternion.cpp" />
     <ClCompile Include="Source\Utility.cpp" />
     <ClCompile Include="Source\Vector2.cpp" />
     <ClCompile Include="Source\Vector3.cpp" />

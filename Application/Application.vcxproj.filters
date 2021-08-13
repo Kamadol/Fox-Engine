@@ -20,13 +20,30 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shaders\solidColor.vert" />
-    <None Include="Shaders\solidColor.frag" />
-    <None Include="Shaders\rainbowColor.vert" />
-    <None Include="Shaders\rainbowColor.frag" />
-    <None Include="Shaders\solidColor_002.vert" />
-    <None Include="Shaders\solidColor_002.frag" />
-    <None Include="Shaders\testShader.vert" />
-    <None Include="Shaders\testShader.frag" />
+    <None Include="Resources\Shaders\spriteShaderV.shader" />
+    <None Include="Resources\Shaders\spriteShaderF.shader" />
+    <None Include="Resources\Shaders\meshShaderV001.shader" />
+    <None Include="Resources\Shaders\meshShaderF001.shader" />
+    <None Include="Resources\Shaders\phongF.shader" />
+    <None Include="Resources\Shaders\phongV.shader" />
+    <None Include="Resources\Shaders\timeTestV.shader" />
+    <None Include="Resources\Shaders\timeTestF.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\fox003.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Resources\fox001.jpg">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Resources\fox002.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Resources\rocks001.jpg">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Resources\textAtlas77.jpg">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -45,6 +45,10 @@ void Shader::unbind() const
 	glUseProgram(0);
 }
 
+void Shader::setUniform1i(const char* uniformName, int v)
+{
+	glUniform1i(glGetUniformLocation(id, uniformName), v);
+}
 void Shader::setUniform1f(const char* uniformName, float v)
 {
 	glUniform1f(glGetUniformLocation(id, uniformName), v);
@@ -61,9 +65,9 @@ void Shader::setUniform4f(const char* uniformName, Vector4 v)
 {
 	glUniform4f(glGetUniformLocation(id, uniformName), v.x, v.y, v.z, v.w);
 }
-void Shader::setUniformMat4(const char* uniformName, const Mat4x4& v)
+void Shader::setUniformMat4(const char* uniformName, const Mat4x4& m)
 {
-	//glUniformMatrix4fv(glGetUniformLocation(id, uniformName), v.vals[0]);
+	glUniformMatrix4fv(glGetUniformLocation(id, uniformName), 1, GL_FALSE, &m.vals[0]);
 }
 
 size_t Shader::compile(size_t type, const std::string source)

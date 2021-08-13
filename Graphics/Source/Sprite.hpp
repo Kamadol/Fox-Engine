@@ -9,14 +9,15 @@
 
 struct SpriteVertex
 {
-	SpriteVertex(Vector3 position, Vector4 color)
-		:position(position), color(color)
+	SpriteVertex(Vector3 position, Vector4 color, Vector2 texCoord)
+		:position(position), color(color), texCoord(texCoord)
 	{
 
 	}
 
 	Vector3 position;
 	Vector4 color;
+	Vector2 texCoord;
 };
 class Sprite : public Transformable
 {

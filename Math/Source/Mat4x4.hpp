@@ -17,6 +17,7 @@ class Mat4x4
 {
 public:
 	Mat4x4(float v);
+	Mat4x4(float* v);
 	Mat4x4();
 
 	static Mat4x4 diagonal(float diagonal);
@@ -30,10 +31,12 @@ public:
 	static Mat4x4 scale(const Vector3& v);
 	static Mat4x4 orthographic(float left, float right, float bottom, float top, float near, float far);
 	static Mat4x4 perspective(float fov, float aspectRatio, float near, float far);
+	static Mat4x4 lookAt(Vector3 position, Vector3 target, Vector3 up);
 
 	Mat4x4 operator+(const Mat4x4& m);
 	Mat4x4 operator-(const Mat4x4& m);
 	Mat4x4 operator*(const Mat4x4& m);
+	Mat4x4 operator*(const Mat4x4& m) const;
 	Mat4x4 operator*(float a);
 	Mat4x4 operator/(float a);
 

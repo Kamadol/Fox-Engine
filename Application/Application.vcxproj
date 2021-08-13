@@ -27,14 +27,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shaders\rainbowColor.frag" />
-    <None Include="Shaders\rainbowColor.vert" />
-    <None Include="Shaders\solidColor.frag" />
-    <None Include="Shaders\solidColor.vert" />
-    <None Include="Shaders\solidColor_002.frag" />
-    <None Include="Shaders\solidColor_002.vert" />
-    <None Include="Shaders\testShader.frag" />
-    <None Include="Shaders\testShader.vert" />
+    <None Include="Resources\Shaders\meshShaderF001.shader" />
+    <None Include="Resources\Shaders\meshShaderV001.shader" />
+    <None Include="Resources\Shaders\phongF.shader" />
+    <None Include="Resources\Shaders\phongV.shader" />
+    <None Include="Resources\Shaders\spriteShaderF.shader" />
+    <None Include="Resources\Shaders\spriteShaderV.shader" />
+    <None Include="Resources\Shaders\timeTestF.shader" />
+    <None Include="Resources\Shaders\timeTestV.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\fox001.jpg" />
+    <Image Include="Resources\fox002.png" />
+    <Image Include="Resources\fox003.png" />
+    <Image Include="Resources\rocks001.jpg" />
+    <Image Include="Resources\textAtlas77.jpg" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

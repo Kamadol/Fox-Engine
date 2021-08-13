@@ -24,7 +24,9 @@ public:
 	Vector2 divideElementwise(const Vector2& v) const;
 	float dot(const Vector2& v) const;
 
+	Vector2 operator-() const;
 	Vector2& operator*=(float a);
+	Vector2& operator/=(float a);
 	Vector2& operator+=(const Vector2& v);
 	Vector2& operator-=(const Vector2& v);
 	Vector2 operator+(const Vector2& v) const;

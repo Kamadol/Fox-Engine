@@ -8,7 +8,11 @@ Transformable::Transformable()
 
 Mat4x4 Transformable::getTransform() const
 {
-	return Mat4x4::rotation(m_euler) * Mat4x4::scale(m_scale) * Mat4x4::translation(m_position);
+	return Mat4x4::translation(m_position) * Mat4x4::scale(m_scale) * Mat4x4::rotation(m_euler);
+}
+Mat4x4 Transformable::getInvTransform() const
+{
+	return Mat4x4::rotation(-m_euler) * Mat4x4::translation(-m_position) * Mat4x4::scale(Vector3(1.0f / m_scale.x, 1.0f / m_scale.y, 1.0f / m_scale.z));
 }
 
 void Transformable::setPosition(Vector3 position)

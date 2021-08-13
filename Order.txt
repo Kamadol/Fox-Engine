@@ -1,0 +1,8 @@
+shader wherever
+
+vao bind
+
+VertexBuffer bind
+IndexBuffer bind
+
+vao layout

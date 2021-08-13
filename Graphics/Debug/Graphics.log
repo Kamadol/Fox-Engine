@@ -1,4 +1,26 @@
-﻿  Sprite.cpp
+﻿  Buffer.cpp
+  CubeMesh.cpp
+  IndexBuffer.cpp
+  Input.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Input.cpp(67,22): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Input.cpp(68,22): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+  Mesh.cpp
+  MovablePerspCamera.cpp
+  OrthographicCamera.cpp
+  PerspectiveCamera.cpp
+  SimpleMeshRenderer.cpp
+  SimpleRenderer2D.cpp
+  Shader.cpp
+  SimpleSpriteRenderer.cpp
+  Sprite.cpp
+  Texture.cpp
+  Transformable.cpp
+  VertexArray.cpp
   Window.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(75,51): warning C4244: "argument": konwersja z "size_t" do "float", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(76,59): warning C4244: "argument": konwersja z "size_t" do "float", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(139,25): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(140,29): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
   Generowanie kodu...
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\VertexLayout.hpp(27): warning C4715: "VertexLayoutElement::getSizeOfType”: niewszystkie ścieżki kodu zwracają wartość
   Graphics.vcxproj -> C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Debug\Graphics.lib

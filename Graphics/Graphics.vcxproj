@@ -159,23 +159,43 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Buffer.hpp" />
+    <ClInclude Include="Source\Camera.hpp" />
+    <ClInclude Include="Source\CubeMesh.hpp" />
     <ClInclude Include="Source\Graphics.hpp" />
     <ClInclude Include="Source\IndexBuffer.hpp" />
+    <ClInclude Include="Source\Input.hpp" />
+    <ClInclude Include="Source\Mesh.hpp" />
+    <ClInclude Include="Source\MovablePerspCamera.hpp" />
+    <ClInclude Include="Source\OrthographicCamera.hpp" />
+    <ClInclude Include="Source\PerspectiveCamera.hpp" />
     <ClInclude Include="Source\Renderable2D.hpp" />
+    <ClInclude Include="Source\SimpleMeshRenderer.hpp" />
     <ClInclude Include="Source\SimpleRenderer2D.hpp" />
     <ClInclude Include="Source\Shader.hpp" />
+    <ClInclude Include="Source\SimpleSpriteRenderer.hpp" />
     <ClInclude Include="Source\Sprite.hpp" />
+    <ClInclude Include="Source\Texture.hpp" />
     <ClInclude Include="Source\Transformable.hpp" />
     <ClInclude Include="Source\VertexArray.hpp" />
     <ClInclude Include="Source\VertexLayout.hpp" />
     <ClInclude Include="Source\Window.hpp" />
+    <ClInclude Include="Vendor\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Buffer.cpp" />
+    <ClCompile Include="Source\CubeMesh.cpp" />
     <ClCompile Include="Source\IndexBuffer.cpp" />
+    <ClCompile Include="Source\Input.cpp" />
+    <ClCompile Include="Source\Mesh.cpp" />
+    <ClCompile Include="Source\MovablePerspCamera.cpp" />
+    <ClCompile Include="Source\OrthographicCamera.cpp" />
+    <ClCompile Include="Source\PerspectiveCamera.cpp" />
+    <ClCompile Include="Source\SimpleMeshRenderer.cpp" />
     <ClCompile Include="Source\SimpleRenderer2D.cpp" />
     <ClCompile Include="Source\Shader.cpp" />
+    <ClCompile Include="Source\SimpleSpriteRenderer.cpp" />
     <ClCompile Include="Source\Sprite.cpp" />
+    <ClCompile Include="Source\Texture.cpp" />
     <ClCompile Include="Source\Transformable.cpp" />
     <ClCompile Include="Source\VertexArray.cpp" />
     <ClCompile Include="Source\Window.cpp" />
