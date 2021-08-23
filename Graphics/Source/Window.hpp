@@ -10,7 +10,16 @@ public:
 	Window(size_t width, size_t height);
 	~Window();
 
-	bool isOpen() const { return glfwWindowShouldClose(m_window); }
+	bool isOpen() const;
+	void close();
+	void setShouldClose(bool shouldClose);
+	bool shouldClose();
+
+	void clear();
+	void pollEvents();
+	void swapBuffers();
+
+	float getAspectRatio();
 
 private:
 	size_t m_width, m_height;

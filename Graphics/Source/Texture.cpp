@@ -38,11 +38,11 @@ bool Texture::load(const char* filename)
 	return true;
 }
 
-void Texture::bind()
+void Texture::bind() const
 {
 	glBindTexture(GL_TEXTURE_2D, m_id);
 }
-void Texture::unbind()
+void Texture::unbind() const
 {
 	glBindTexture(GL_TEXTURE_2D, 0);
 }

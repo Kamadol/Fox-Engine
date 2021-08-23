@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Math\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Graphics\Source;$(SolutionDir)Math\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,7 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Math\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Graphics\Source;$(SolutionDir)Math\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,46 +158,54 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Buffer.hpp" />
+    <ClInclude Include="Source\BitmapFont.hpp" />
     <ClInclude Include="Source\Camera.hpp" />
-    <ClInclude Include="Source\CubeMesh.hpp" />
+    <ClInclude Include="Source\Meshes\CubeMesh.hpp" />
     <ClInclude Include="Source\Graphics.hpp" />
-    <ClInclude Include="Source\IndexBuffer.hpp" />
     <ClInclude Include="Source\Input.hpp" />
-    <ClInclude Include="Source\Mesh.hpp" />
+    <ClInclude Include="Source\Meshes\CylinderMesh.hpp" />
+    <ClInclude Include="Source\Meshes\Mesh.hpp" />
+    <ClInclude Include="Source\Meshes\PlaneMesh.hpp" />
+    <ClInclude Include="Source\Meshes\TorusMesh.hpp" />
     <ClInclude Include="Source\MovablePerspCamera.hpp" />
     <ClInclude Include="Source\OrthographicCamera.hpp" />
     <ClInclude Include="Source\PerspectiveCamera.hpp" />
-    <ClInclude Include="Source\Renderable2D.hpp" />
-    <ClInclude Include="Source\SimpleMeshRenderer.hpp" />
-    <ClInclude Include="Source\SimpleRenderer2D.hpp" />
+    <ClInclude Include="Source\Renderers\SimpleMeshRenderer.hpp" />
+    <ClInclude Include="Source\Renderers\SimpleTextRenderer.hpp" />
+    <ClInclude Include="Source\Scene.hpp" />
+    <ClInclude Include="Source\SceneManager.hpp" />
     <ClInclude Include="Source\Shader.hpp" />
-    <ClInclude Include="Source\SimpleSpriteRenderer.hpp" />
+    <ClInclude Include="Source\Renderers\SimpleSpriteRenderer.hpp" />
+    <ClInclude Include="Source\Meshes\SphereMesh.hpp" />
     <ClInclude Include="Source\Sprite.hpp" />
+    <ClInclude Include="Source\Text.hpp" />
     <ClInclude Include="Source\Texture.hpp" />
     <ClInclude Include="Source\Transformable.hpp" />
-    <ClInclude Include="Source\VertexArray.hpp" />
-    <ClInclude Include="Source\VertexLayout.hpp" />
     <ClInclude Include="Source\Window.hpp" />
     <ClInclude Include="Vendor\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Buffer.cpp" />
-    <ClCompile Include="Source\CubeMesh.cpp" />
-    <ClCompile Include="Source\IndexBuffer.cpp" />
+    <ClCompile Include="Source\BitmapFont.cpp" />
+    <ClCompile Include="Source\Meshes\CubeMesh.cpp" />
     <ClCompile Include="Source\Input.cpp" />
-    <ClCompile Include="Source\Mesh.cpp" />
+    <ClCompile Include="Source\Meshes\CylinderMesh.cpp" />
+    <ClCompile Include="Source\Meshes\Mesh.cpp" />
+    <ClCompile Include="Source\Meshes\PlaneMesh.cpp" />
+    <ClCompile Include="Source\Meshes\TorusMesh.cpp" />
     <ClCompile Include="Source\MovablePerspCamera.cpp" />
     <ClCompile Include="Source\OrthographicCamera.cpp" />
     <ClCompile Include="Source\PerspectiveCamera.cpp" />
-    <ClCompile Include="Source\SimpleMeshRenderer.cpp" />
-    <ClCompile Include="Source\SimpleRenderer2D.cpp" />
+    <ClCompile Include="Source\Renderers\SimpleMeshRenderer.cpp" />
+    <ClCompile Include="Source\Renderers\SimpleTextRenderer.cpp" />
+    <ClCompile Include="Source\Scene.cpp" />
+    <ClCompile Include="Source\SceneManager.cpp" />
     <ClCompile Include="Source\Shader.cpp" />
-    <ClCompile Include="Source\SimpleSpriteRenderer.cpp" />
+    <ClCompile Include="Source\Renderers\SimpleSpriteRenderer.cpp" />
+    <ClCompile Include="Source\Meshes\SphereMesh.cpp" />
     <ClCompile Include="Source\Sprite.cpp" />
+    <ClCompile Include="Source\Text.cpp" />
     <ClCompile Include="Source\Texture.cpp" />
     <ClCompile Include="Source\Transformable.cpp" />
-    <ClCompile Include="Source\VertexArray.cpp" />
     <ClCompile Include="Source\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

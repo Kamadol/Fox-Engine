@@ -3,6 +3,7 @@
 
 #include "Vector3.hpp"
 #include "Mat4x4.hpp"
+#include "Quaternion.hpp"
 
 class Transformable
 {
@@ -20,14 +21,15 @@ public:
 	void scale(Vector3 scale);
 	Vector3 getScale() const;
 
-	void setRotation(Vector3 euler);
-	void rotate(Vector3 offset);
-	Vector3 getRotation() const;
+	void setRotation(Quaternion rotation);
+	void rotate(Quaternion rotation);
+	void rotate(Vector3 axis, float angle);
+	Quaternion getRotation() const;
 
 protected:
 	Vector3 m_position;
 	Vector3 m_scale;
-	Vector3 m_euler;
+	Quaternion m_rotation;
 
 };
 

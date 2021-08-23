@@ -8,7 +8,6 @@ in vec3 fragPos;
 uniform sampler2D texture0;
 uniform sampler2D texture1;
 
-uniform vec3 objectColor;
 uniform vec3 lightColor;
 uniform vec3 lightPos;
 uniform vec3 viewPos;
@@ -33,6 +32,7 @@ void main()
     vec3 specular = specularStrength * spec * lightColor;
 
     //result
-    vec3 result = (ambient + diffuse + specular) * objectColor;
+    vec3 result = ambient + diffuse + specular;
     FragColor = texture(texture0, texCoord) * vec4(result, 1.0f);
+    //FragColor = vec4(normal.xyz, 1.0f);
 }

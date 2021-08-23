@@ -4,6 +4,12 @@
 #include "Window.hpp"
 #include "Vector2.hpp"
 
+enum MOUSE_KEY
+{
+	LEFT = GLFW_MOUSE_BUTTON_LEFT,
+	RIGHT = GLFW_MOUSE_BUTTON_RIGHT,
+	MIDDLE = GLFW_MOUSE_BUTTON_MIDDLE
+};
 enum KEY
 {
 	SPACE = GLFW_KEY_SPACE,
@@ -27,7 +33,7 @@ enum KEY
 	O = GLFW_KEY_O,
 	P = GLFW_KEY_P,
 	Q = GLFW_KEY_Q,
-	R = GLFW_KEY_P,
+	R = GLFW_KEY_R,
 	S = GLFW_KEY_S,
 	T = GLFW_KEY_T,
 	U = GLFW_KEY_U,
@@ -35,7 +41,7 @@ enum KEY
 	W = GLFW_KEY_W,
 	X = GLFW_KEY_X,
 	Y = GLFW_KEY_Y,
-	Z = GLFW_KEY_Z,
+	Z = GLFW_KEY_Z
 };
 class Input
 {
@@ -45,14 +51,20 @@ public:
 	Input();
 
 	static bool isButtonPressed(int code);
+	static bool isButtonOncePressed(int code);
+
 	static bool isMouseButtonPressed(int code);
+	static bool isMouseButtonOncePressed(int code);
 	static Vector2 getMousePosition();
-	static void setMouseStartPosition(Vector2 startMousePosition);
 	static Vector2 getMouseMovement();
 
 private:
 	static bool m_keys[GLFW_KEY_LAST];
+	static bool m_singlePressKeys[GLFW_KEY_LAST];
+	static bool m_isSinglePress[GLFW_KEY_LAST];
+
 	static bool m_mouseButtons[GLFW_MOUSE_BUTTON_LAST];
+	static bool m_isSingleMousePress[GLFW_MOUSE_BUTTON_LAST];
 	static bool firstMouse;
 	static Vector2 m_previousMousePosition;
 	static Vector2 m_mousePosition;

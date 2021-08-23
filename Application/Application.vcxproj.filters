@@ -20,14 +20,18 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Shaders\spriteShaderV.shader" />
-    <None Include="Resources\Shaders\spriteShaderF.shader" />
     <None Include="Resources\Shaders\meshShaderV001.shader" />
     <None Include="Resources\Shaders\meshShaderF001.shader" />
     <None Include="Resources\Shaders\phongF.shader" />
     <None Include="Resources\Shaders\phongV.shader" />
     <None Include="Resources\Shaders\timeTestV.shader" />
     <None Include="Resources\Shaders\timeTestF.shader" />
+    <None Include="Resources\Shaders\spriteShaderV.shader" />
+    <None Include="Resources\Shaders\spriteShaderF.shader" />
+    <None Include="Resources\Shaders\textShaderV.shader" />
+    <None Include="Resources\Shaders\textShaderF.shader" />
+    <None Include="Resources\Shaders\normalShowV.shader" />
+    <None Include="Resources\Shaders\normalShowF.shader" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\fox003.png">
@@ -45,5 +49,20 @@
     <Image Include="Resources\textAtlas77.jpg">
       <Filter>Pliki zasobów</Filter>
     </Image>
+    <Image Include="Resources\glass.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Resources\font001.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Resources\digitFont.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Resources\font002.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\Pixellari.ttf" />
   </ItemGroup>
 </Project>

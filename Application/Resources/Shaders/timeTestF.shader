@@ -11,7 +11,6 @@ uniform sampler2D texture1;
 uniform float time;
 uniform vec2 screenSize;
 
-uniform vec3 objectColor;
 uniform vec3 lightColor;
 uniform vec3 lightPos;
 uniform vec3 viewPos;
@@ -43,7 +42,7 @@ void main()
     color += cos(coord.x * 30.0f - sin(time + coord.y * 20.0f));
     color += cos(coord.x * 80.0f - sin(time + coord.y * 5.0f));
     color += cos(coord.x * 5.0f - sin(time + coord.y * 40.0f));
-    color += cos(coord.x * 15.0f - sin(time + coord.y * 666.0f));
+    color += cos(coord.x * 15.0f - sin(time + coord.y * 70.0f));
     color = (color + 1.0f) * 0.5f;
 
     vec3 result = (ambient + diffuse + specular) * vec3(color);

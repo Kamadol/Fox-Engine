@@ -29,19 +29,30 @@
   <ItemGroup>
     <None Include="Resources\Shaders\meshShaderF001.shader" />
     <None Include="Resources\Shaders\meshShaderV001.shader" />
+    <None Include="Resources\Shaders\normalShowF.shader" />
+    <None Include="Resources\Shaders\normalShowV.shader" />
     <None Include="Resources\Shaders\phongF.shader" />
     <None Include="Resources\Shaders\phongV.shader" />
     <None Include="Resources\Shaders\spriteShaderF.shader" />
     <None Include="Resources\Shaders\spriteShaderV.shader" />
+    <None Include="Resources\Shaders\textShaderV.shader" />
+    <None Include="Resources\Shaders\textShaderF.shader" />
     <None Include="Resources\Shaders\timeTestF.shader" />
     <None Include="Resources\Shaders\timeTestV.shader" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Resources\digitFont.png" />
+    <Image Include="Resources\font001.png" />
+    <Image Include="Resources\font002.png" />
     <Image Include="Resources\fox001.jpg" />
     <Image Include="Resources\fox002.png" />
     <Image Include="Resources\fox003.png" />
+    <Image Include="Resources\glass.png" />
     <Image Include="Resources\rocks001.jpg" />
     <Image Include="Resources\textAtlas77.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\Pixellari.ttf" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -113,7 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Graphics\Source;$(SolutionDir)Fox Engine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Math\Source;$(SolutionDir)Graphics\Source;$(SolutionDir)Fox Engine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,7 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Graphics\Source;$(SolutionDir)Fox Engine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Math\Source;$(SolutionDir)Graphics\Source;$(SolutionDir)Fox Engine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -1,18 +1,18 @@
 #include "Transformable.hpp"
 
 Transformable::Transformable()
-	:m_position(Vector3(0.0f, 0.0f, 0.0f)), m_scale(Vector3(1.0f, 1.0f, 1.0f)), m_euler(Vector3(0.0f, 0.0f, 0.0f))
+	:m_position(Vector3(0.0f, 0.0f, 0.0f)), m_scale(Vector3(1.0f, 1.0f, 1.0f)), m_rotation(Quaternion())
 {
 
 }
 
 Mat4x4 Transformable::getTransform() const
 {
-	return Mat4x4::translation(m_position) * Mat4x4::scale(m_scale) * Mat4x4::rotation(m_euler);
+	return Mat4x4::translation(m_position) * m_rotation.toMatrix() * Mat4x4::scale(m_scale);
 }
 Mat4x4 Transformable::getInvTransform() const
 {
-	return Mat4x4::rotation(-m_euler) * Mat4x4::translation(-m_position) * Mat4x4::scale(Vector3(1.0f / m_scale.x, 1.0f / m_scale.y, 1.0f / m_scale.z));
+	return Mat4x4::scale(Vector3(1.0f / m_scale.x, 1.0f / m_scale.y, 1.0f / m_scale.z)) * m_rotation.conj().toMatrix() * Mat4x4::translation(-m_position);
 }
 
 void Transformable::setPosition(Vector3 position)
@@ -43,15 +43,19 @@ Vector3 Transformable::getScale() const
 	return m_scale;
 }
 
-void Transformable::setRotation(Vector3 euler)
+void Transformable::setRotation(Quaternion rotation)
 {
-	m_euler = euler;
+	m_rotation = rotation;
 }
-void Transformable::rotate(Vector3 offset)
+void Transformable::rotate(Quaternion rotation)
 {
-	m_euler += offset;
+	m_rotation *= rotation;
 }
-Vector3 Transformable::getRotation() const
+void Transformable::rotate(Vector3 axis, float angle)
 {
-	return m_euler;
+	m_rotation *= Quaternion(axis, angle);
+}
+Quaternion Transformable::getRotation() const
+{
+	return m_rotation;
 }
