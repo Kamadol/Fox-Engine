@@ -10,6 +10,8 @@ public:
 	Quaternion(Vector3 axis, float angle);
 	Quaternion();
 
+	static Quaternion identity();
+
 	Quaternion conj() const;
 	float dot(Quaternion other) const;	
 	 

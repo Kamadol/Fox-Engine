@@ -41,7 +41,7 @@ CubeMesh::CubeMesh(Vector3 size)
 	m_vertices.push_back(MeshVertex(Vector3( -size.x, -size.y, -size.z), Vector2(0.0f, 0.0f), Vector3( 0.0f, -1.0f,  0.0f)));
 	m_vertices.push_back(MeshVertex(Vector3(  size.x, -size.y, -size.z), Vector2(1.0f, 0.0f), Vector3( 0.0f, -1.0f,  0.0f)));
 
-	for (size_t i = 0; i < 6; i++)
+	for (unsigned int i = 0; i < 6; i++)
 	{
 		m_indices.push_back(0 + i * 4);
 		m_indices.push_back(1 + i * 4);

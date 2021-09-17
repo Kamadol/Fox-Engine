@@ -189,8 +189,8 @@ Mat4x4 Mat4x4::lookAt(Vector3 position, Vector3 target, Vector3 up)
 	Vector3 cameraUp = direction ^ right;
 
 	Mat4x4 view;
-	view.vals[0] =     right.x; view.vals[4] =     right.y; view.vals[8]  =     right.z; view.vals[12] = -right * position;
-	view.vals[1] =  cameraUp.x; view.vals[5] =  cameraUp.y; view.vals[9]  =  cameraUp.z; view.vals[13] = -cameraUp * position;
+	view.vals[0] =     right.x; view.vals[4] =     right.y; view.vals[8]  =     right.z; view.vals[12] =     -right * position;
+	view.vals[1] =  cameraUp.x; view.vals[5] =  cameraUp.y; view.vals[9]  =  cameraUp.z; view.vals[13] =  -cameraUp * position;
 	view.vals[2] = direction.x; view.vals[6] = direction.y; view.vals[10] = direction.z; view.vals[14] = -direction * position;
 	view.vals[3] =        0.0f; view.vals[7] =        0.0f; view.vals[11] =        0.0f; view.vals[15] =                  1.0f;
 

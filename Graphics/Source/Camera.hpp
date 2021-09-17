@@ -6,7 +6,7 @@
 class Camera
 {
 public:
-	virtual Mat4x4 getMatrix() = 0;
+	virtual Mat4x4 getMatrix() const = 0;
 
 protected:
 	Mat4x4 m_projection;

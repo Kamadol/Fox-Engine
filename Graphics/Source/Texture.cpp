@@ -2,8 +2,9 @@
 
 #include <iostream>
 
-#define STB_IMAGE_IMPLEMENTATION
-#include "..\Vendor\stb_image.h"
+//#define STB_IMAGE_IMPLEMENTATION
+#include "../Vendor/stb_image.h"
+
 #include "GL/glew.h"
 
 Texture::Texture()
@@ -22,7 +23,7 @@ bool Texture::load(const char* filename)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	if (data)
+	if (data)  
 	{
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_xSize, m_ySize, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);
@@ -46,3 +47,15 @@ void Texture::unbind() const
 {
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
+
+Vector2 Texture::getSize() const
+{ 
+	return Vector2((float)m_xSize, (float)m_ySize); 
+}
+
+/*void Texture::activateTextureUnit(size_t unit) const
+{
+	glActiveTexture(GL_TEXTURE0 + unit);
+	glBindTexture(GL_TEXTURE_2D, m_id);
+	shader.setUniform1i(("texture" + std::to_string(unit)).c_str(), unit);
+}*/

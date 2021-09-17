@@ -17,16 +17,8 @@ CylinderMesh::CylinderMesh(size_t sideQuads, float height, float radius)
 
 	m_vertices.push_back(MeshVertex(Vector3(0.0f, height * 0.5f, 0.0f), Vector2(0.0f, 0.0f), Vector3(0.0f, 1.0f, 0.0f)));
 
-	//m_indices.push_back(0);
-	//m_indices.push_back(1);
-	//m_indices.push_back(3);
-
-	//m_indices.push_back(0);
-	//m_indices.push_back(3);
-	//m_indices.push_back(5);
-
 	//bottom
-	for (size_t i = 0; i < sideQuads - 1; i++)
+	for (unsigned int i = 0; i < sideQuads - 1; i++)
 	{
 		m_indices.push_back(0);
 		m_indices.push_back(i * 2 + 1);
@@ -37,7 +29,7 @@ CylinderMesh::CylinderMesh(size_t sideQuads, float height, float radius)
 	m_indices.push_back(1);
 
 	//middle
-	for (size_t i = 0; i < sideQuads - 1; i++)
+	for (unsigned int i = 0; i < sideQuads - 1; i++)
 	{
 		m_indices.push_back(i * 2 + 1);
 		m_indices.push_back(i * 2 + 4);
@@ -56,7 +48,7 @@ CylinderMesh::CylinderMesh(size_t sideQuads, float height, float radius)
 	m_indices.push_back(sideQuads * 2);
 
 	//top 
-	for (size_t i = 0; i < sideQuads - 1; i++)
+	for (unsigned int i = 0; i < sideQuads - 1; i++)
 	{
 		m_indices.push_back(m_vertices.size() - 1);
 		m_indices.push_back(i * 2 + 4);

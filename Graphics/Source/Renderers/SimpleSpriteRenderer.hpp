@@ -13,10 +13,10 @@ public:
 	void submit(const Sprite& sprite, Shader& shader, const Mat4x4& camera);
 
 private:
-	size_t m_VAO;
-	size_t m_VBO;
-	size_t m_IBO;
-	size_t m_indices[6];
+	unsigned int m_VAO;
+	unsigned int m_VBO;
+	unsigned int m_IBO;
+	unsigned int m_indices[6];
 
 };
 

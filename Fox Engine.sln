@@ -3,9 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fox Engine", "Fox Engine\Fox Engine.vcxproj", "{8758D085-3CEC-44D8-8AE6-DF3469EB93BF}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "Application\Application.vcxproj", "{9F29D5D6-1B38-469E-B8FF-0E37A1799F07}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DC68A3C8-42B6-4EBD-BFE8-2546024AA600} = {DC68A3C8-42B6-4EBD-BFE8-2546024AA600}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graphics", "Graphics\Graphics.vcxproj", "{DC68A3C8-42B6-4EBD-BFE8-2546024AA600}"
 EndProject
@@ -19,14 +20,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8758D085-3CEC-44D8-8AE6-DF3469EB93BF}.Debug|x64.ActiveCfg = Debug|x64
-		{8758D085-3CEC-44D8-8AE6-DF3469EB93BF}.Debug|x64.Build.0 = Debug|x64
-		{8758D085-3CEC-44D8-8AE6-DF3469EB93BF}.Debug|x86.ActiveCfg = Debug|Win32
-		{8758D085-3CEC-44D8-8AE6-DF3469EB93BF}.Debug|x86.Build.0 = Debug|Win32
-		{8758D085-3CEC-44D8-8AE6-DF3469EB93BF}.Release|x64.ActiveCfg = Release|x64
-		{8758D085-3CEC-44D8-8AE6-DF3469EB93BF}.Release|x64.Build.0 = Release|x64
-		{8758D085-3CEC-44D8-8AE6-DF3469EB93BF}.Release|x86.ActiveCfg = Release|Win32
-		{8758D085-3CEC-44D8-8AE6-DF3469EB93BF}.Release|x86.Build.0 = Release|Win32
 		{9F29D5D6-1B38-469E-B8FF-0E37A1799F07}.Debug|x64.ActiveCfg = Debug|x64
 		{9F29D5D6-1B38-469E-B8FF-0E37A1799F07}.Debug|x64.Build.0 = Debug|x64
 		{9F29D5D6-1B38-469E-B8FF-0E37A1799F07}.Debug|x86.ActiveCfg = Debug|Win32

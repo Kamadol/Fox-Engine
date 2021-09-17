@@ -2,7 +2,7 @@
 
 #include "GL/glew.h"
 
-#define MAX_VERTEX_COUNT 65536
+#define MAX_VERTEX_COUNT 250000
 
 SimpleMeshRenderer::SimpleMeshRenderer()
 {
@@ -15,7 +15,7 @@ SimpleMeshRenderer::SimpleMeshRenderer()
 
 	glGenBuffers(1, &m_IBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_IBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(size_t) * MAX_VERTEX_COUNT, 0, GL_DYNAMIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * MAX_VERTEX_COUNT, 0, GL_DYNAMIC_DRAW);
 
 	glEnableVertexAttribArray(0);
 	glEnableVertexAttribArray(1);
@@ -40,7 +40,7 @@ void SimpleMeshRenderer::submit(const Mesh& mesh, Shader& shader, const Mat4x4& 
 	shader.setUniformMat4("u_model", mesh.getTransform());
 
 	const std::vector<Texture*>& textures = mesh.getTextures();
-	for (size_t i = 0; i < textures.size(); i++)
+	for (unsigned int i = 0; i < textures.size(); i++)
 	{
 		glActiveTexture(GL_TEXTURE0 + i);
 		textures[i]->bind();
@@ -51,8 +51,7 @@ void SimpleMeshRenderer::submit(const Mesh& mesh, Shader& shader, const Mat4x4& 
 	glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_IBO);
 	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(MeshVertex) * mesh.getVertices().size(), &mesh.getVertices()[0]);
-	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(size_t) * mesh.getIndices().size(), &mesh.getIndices()[0]);
+	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(unsigned int) * mesh.getIndices().size(), &mesh.getIndices()[0]);
 	glDrawElements(GL_TRIANGLES, mesh.getIndices().size(), GL_UNSIGNED_INT, 0);
-	//glDrawElements(GL_POINTS, mesh.getIndices().size(), GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 }

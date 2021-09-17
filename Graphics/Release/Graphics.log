@@ -1,12 +1,1 @@
-﻿  Input.cpp
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Input.cpp(95,22): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Input.cpp(96,22): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-  Window.cpp
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(61,51): warning C4244: "argument": konwersja z "size_t" do "float", możliwa utrata danych
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(62,59): warning C4244: "argument": konwersja z "size_t" do "float", możliwa utrata danych
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(150,25): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(151,29): warning C4244: "=": konwersja z "double" do "float", możliwa utrata danych
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(213,62): warning C4244: "argument": konwersja z "size_t" do "float", możliwa utrata danych
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(213,53): warning C4244: "argument": konwersja z "size_t" do "float", możliwa utrata danych
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(280,17): warning C4244: "return": konwersja z "size_t" do "float", możliwa utrata danych
-  Graphics.vcxproj -> C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Release\Graphics.lib
+﻿  Graphics.vcxproj -> C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Release\Graphics.lib

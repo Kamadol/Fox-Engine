@@ -5,6 +5,11 @@ Vector2::Vector2(float x, float y)
 {
 
 }
+Vector2::Vector2(float xy)
+	:x(xy), y(xy)
+{
+
+}
 Vector2::Vector2()
 	:x(0.0f), y(0.0f)
 {

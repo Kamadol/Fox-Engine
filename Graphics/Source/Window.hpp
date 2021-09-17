@@ -4,25 +4,34 @@
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
 
+#include "Vector2.hpp"
+
 class Window
 {
 public:
 	Window(size_t width, size_t height);
-	~Window();
+	~Window();	
 
 	bool isOpen() const;
 	void close();
 	void setShouldClose(bool shouldClose);
-	bool shouldClose();
+	bool getShouldClose() const;
 
+	void clear(bool color, bool depth, bool stencil);
 	void clear();
 	void pollEvents();
 	void swapBuffers();
 
-	float getAspectRatio();
+	Vector2 getSize() const;
+	float getAspectRatio() const;
 
 private:
-	size_t m_width, m_height;
+	static void window_size_callback(GLFWwindow* window, int width, int height);
+
+private:
+	void init();
+
+	static size_t m_windowCount;
 
 	GLFWwindow* m_window;
 

@@ -13,9 +13,9 @@ public:
 	void submit(const Mesh& mesh, Shader& shader, const Mat4x4& camera);
 
 private:
-	size_t m_VAO;
-	size_t m_VBO;
-	size_t m_IBO;
+	unsigned int m_VAO;
+	unsigned int m_VBO;
+	unsigned int m_IBO;
 
 };
 

@@ -41,10 +41,12 @@ public:
 	void bind() const;
 	void unbind() const;
 
-	Vector2 getSize() const { return Vector2((float)m_xSize, (float)m_ySize); }
+	Vector2 getSize() const;
+
+	//void activateTextureUnit(size_t unit) const;
 
 protected:
-	size_t m_id;
+	unsigned int m_id;
 	int m_xSize, m_ySize;
 
 };

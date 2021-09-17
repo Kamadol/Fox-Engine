@@ -30,9 +30,9 @@ TorusMesh::TorusMesh(size_t rings, size_t vPerRing, float radius, float ringRadi
 		currentBetweenRingsAngle += betweenRingsAngle;
 	}
 
-	for (size_t i = 0; i < rings; i++)
+	for (unsigned int i = 0; i < rings; i++)
 	{
-		size_t currentStartIndex = i * vPerRing;
+		unsigned int currentStartIndex = i * vPerRing;
 
 		for (size_t j = 0; j < vPerRing; j++)
 		{

@@ -1,52 +1,56 @@
 #include "MovablePerspCamera.hpp"
 
+#include "Input.hpp"
+
 MovablePerspCamera::MovablePerspCamera(float fov, float aspectRatio, float near, float far)
+    :m_currentRotation(Quaternion::identity()), m_xAngle(0.0f), m_yAngle(0.0f)
 {
 	m_projection = Mat4x4::perspective(fov, aspectRatio, near, far);
 }
 
-void MovablePerspCamera::setPosition(Vector3 position)
+Mat4x4 MovablePerspCamera::getMatrix() const
 {
-	m_position = position;
-}
-Vector3 MovablePerspCamera::getPosition()
-{
-	return m_position;
-}
-void MovablePerspCamera::move(Vector3 offset)
-{
-	m_position += offset;
-}
-void MovablePerspCamera::moveRight(float offset)
-{
-	m_position += (m_front ^ m_up).unit() * offset;
-}
-void MovablePerspCamera::moveFront(float offset)
-{
-	m_position += m_front * offset;
+    //return m_projection * Mat4x4::lookAt(m_position, m_position - getFront(), Vector3(0.0f, 1.0f, 0.0f));
+    return m_projection * getInvTransform();
 }
 
-void MovablePerspCamera::rotateX(float angle)
+void MovablePerspCamera::update(float dTime)
 {
-	Vector3 rotated = Mat4x4::rotation((m_front ^ m_up).unit(), angle) * m_front;
-	if (abs((rotated.unit() * m_up.unit())) < 0.98f )
-		m_front = Vector3(rotated.x, rotated.y, rotated.z);
-}
-void MovablePerspCamera::rotateY(float angle)
-{
-	m_front = Mat4x4::rotationY(angle) * m_front;
-}
+    float cameraSpeed = 10.0f * dTime;
+    float cameraRotationSpeed = 0.8f * dTime;
 
-void MovablePerspCamera::setFront(Vector3 front)
-{
-	m_front = front;
-}
-void MovablePerspCamera::setUp(Vector3 up)
-{
-	m_up = up;
-}
+    Vector2 mouseMovement = Input::getMouseMovement();
+    m_yAngle -= mouseMovement.x * cameraRotationSpeed;
+    m_xAngle += mouseMovement.y * cameraRotationSpeed;
 
-Mat4x4 MovablePerspCamera::getMatrix()
-{
-	return m_projection * Mat4x4::lookAt(m_position, m_position + m_front, m_up);
+    float maxAngle = 88.0f / 180.0f * 3.1415f;
+    if (m_xAngle > maxAngle)
+        m_xAngle = maxAngle;
+    if (m_xAngle < -maxAngle)
+        m_xAngle = -maxAngle;
+
+    Quaternion destRotation = Quaternion::identity();
+    destRotation *= Quaternion(Vector3(0.0f, 1.0f, 0.0f), m_yAngle);
+    
+    Vector3 right = -destRotation.rotate(Vector3(1.0f, 0.0f, 0.0f));
+    Vector3 front = -destRotation.rotate(Vector3(0.0f, 0.0f, 1.0f));
+
+    if (Input::isButtonPressed(KEY::W))
+        move(front * cameraSpeed);
+    if (Input::isButtonPressed(KEY::S))
+        move(-front * cameraSpeed);
+    if (Input::isButtonPressed(KEY::A))
+        move(right * cameraSpeed);
+    if (Input::isButtonPressed(KEY::D))
+        move(-right * cameraSpeed);
+    if (Input::isButtonPressed(KEY::SPACE))
+        move(Vector3(0.0f, cameraSpeed, 0.0f));
+    if (Input::isButtonPressed(KEY::LSHIFT))
+        move(Vector3(0.0f, -cameraSpeed, 0.0f));
+
+    destRotation *= Quaternion(Vector3(1.0f, 0.0f, 0.0f), m_xAngle);
+
+    m_currentRotation = m_currentRotation.lerp(destRotation, 0.8f);
+
+    setRotation(m_currentRotation);
 }

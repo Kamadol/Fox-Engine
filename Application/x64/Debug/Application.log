@@ -1,0 +1,5 @@
+﻿  Application.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Application\Source\MeshesScene.hpp(32,1): warning C4305: "argument": obcięcie z "double" do "float"
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Application\Source\NormalMappingScene.hpp(21,1): warning C4305: "argument": obcięcie z "double" do "float"
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Application\Source\MinecraftScene.hpp(22,30): warning C4244: "inicjowanie": konwersja z "size_t" do "float", możliwa utrata danych
+  Application.vcxproj -> C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\x64\Debug\Application.exe

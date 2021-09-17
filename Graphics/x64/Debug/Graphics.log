@@ -1,0 +1,3 @@
+﻿  FrameBuffer.cpp
+assimp-vc142-mt.lib(assimp-vc142-mt.dll) : warning LNK4006: element __NULL_IMPORT_DESCRIPTOR jest już zdefiniowany w elemencie opengl32.lib(OPENGL32.dll); druga definicja została zignorowana
+  Graphics.vcxproj -> C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\x64\Debug\Graphics.lib

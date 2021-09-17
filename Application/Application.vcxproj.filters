@@ -18,51 +18,78 @@
     <ClCompile Include="Source\Application.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="Source\SceneManager.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Shaders\meshShaderV001.shader" />
-    <None Include="Resources\Shaders\meshShaderF001.shader" />
-    <None Include="Resources\Shaders\phongF.shader" />
-    <None Include="Resources\Shaders\phongV.shader" />
-    <None Include="Resources\Shaders\timeTestV.shader" />
-    <None Include="Resources\Shaders\timeTestF.shader" />
-    <None Include="Resources\Shaders\spriteShaderV.shader" />
-    <None Include="Resources\Shaders\spriteShaderF.shader" />
-    <None Include="Resources\Shaders\textShaderV.shader" />
-    <None Include="Resources\Shaders\textShaderF.shader" />
-    <None Include="Resources\Shaders\normalShowV.shader" />
-    <None Include="Resources\Shaders\normalShowF.shader" />
+    <None Include="Resources\Shaders\Sprite\rayMarching.shader" />
+    <None Include="Resources\Shaders\Mesh\normalShow.shader" />
+    <None Include="Resources\Shaders\Mesh\singleColor.shader" />
+    <None Include="Resources\Shaders\Sprite\postProcess.shader" />
+    <None Include="Resources\Shaders\Mesh\phong.shader" />
+    <None Include="Resources\Shaders\Mesh\timeTest.shader" />
+    <None Include="Resources\Shaders\Text\textShader.shader" />
+    <None Include="Resources\Models\fox.stl" />
+    <None Include="Resources\Shaders\Mesh\planarLight.shader" />
+    <None Include="Resources\Models\fox002.stl" />
+    <None Include="Resources\Models\minisaur.stl" />
+    <None Include="Resources\Shaders\Mesh\planarPointLight.shader" />
+    <None Include="Resources\Shaders\Mesh\batchShader.shader" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\fox003.png">
+    <Image Include="Resources\Textures\digitFont.png">
       <Filter>Pliki zasobów</Filter>
     </Image>
-    <Image Include="Resources\fox001.jpg">
+    <Image Include="Resources\Textures\font001.png">
       <Filter>Pliki zasobów</Filter>
     </Image>
-    <Image Include="Resources\fox002.png">
+    <Image Include="Resources\Textures\font002.png">
       <Filter>Pliki zasobów</Filter>
     </Image>
-    <Image Include="Resources\rocks001.jpg">
+    <Image Include="Resources\Textures\fox001.jpg">
       <Filter>Pliki zasobów</Filter>
     </Image>
-    <Image Include="Resources\textAtlas77.jpg">
+    <Image Include="Resources\Textures\fox002.png">
       <Filter>Pliki zasobów</Filter>
     </Image>
-    <Image Include="Resources\glass.png">
+    <Image Include="Resources\Textures\fox003.png">
       <Filter>Pliki zasobów</Filter>
     </Image>
-    <Image Include="Resources\font001.png">
+    <Image Include="Resources\Textures\glass.png">
       <Filter>Pliki zasobów</Filter>
     </Image>
-    <Image Include="Resources\digitFont.png">
+    <Image Include="Resources\Textures\rocks001.jpg">
       <Filter>Pliki zasobów</Filter>
     </Image>
-    <Image Include="Resources\font002.png">
+    <Image Include="Resources\Textures\textAtlas77.jpg">
       <Filter>Pliki zasobów</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="Resources\Pixellari.ttf" />
+    <ClInclude Include="Source\MeshesScene.hpp">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\NormalMappingScene.hpp">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RayMarchingScene.hpp">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SceneManager.hpp">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene.hpp">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MinecraftScene.hpp">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\Fonts\Pixellari.ttf" />
   </ItemGroup>
 </Project>

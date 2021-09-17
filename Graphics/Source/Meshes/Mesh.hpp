@@ -16,6 +16,11 @@ struct MeshVertex
 	{
 
 	}
+	MeshVertex()
+		:position(Vector3::zero()), texCoord(Vector2::zero()), normal(Vector3::zero())
+	{
+
+	}
 
 	Vector3 position;
 	Vector2 texCoord;
@@ -28,16 +33,18 @@ public:
 
 	void addTexture(Texture* texture);
 
+	void load(const char* filename);
+
 	size_t getVertexCount() { return m_vertices.size(); }
 
 	const std::vector<MeshVertex>& getVertices() const { return m_vertices; }
-	const std::vector<size_t>& getIndices() const { return m_indices; }
+	const std::vector<unsigned int>& getIndices() const { return m_indices; }
 	const std::vector<Texture*>& getTextures() const { return m_textures; }
 
 protected:
-	std::vector<MeshVertex> m_vertices;
-	std::vector<size_t>     m_indices;
-	std::vector<Texture*>   m_textures;
+	std::vector<MeshVertex>   m_vertices;
+	std::vector<unsigned int> m_indices;
+	std::vector<Texture*>     m_textures;
 
 };
 

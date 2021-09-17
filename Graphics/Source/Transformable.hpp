@@ -26,6 +26,10 @@ public:
 	void rotate(Vector3 axis, float angle);
 	Quaternion getRotation() const;
 
+	Vector3 getRight() const;
+	Vector3 getUp() const;
+	Vector3 getFront() const;
+
 protected:
 	Vector3 m_position;
 	Vector3 m_scale;

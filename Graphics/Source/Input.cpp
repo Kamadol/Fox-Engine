@@ -92,6 +92,6 @@ void Input::mouse_button_callback(GLFWwindow* window, int button, int action, in
 }
 void Input::cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
 {
-	m_mousePosition.x = xpos;
-	m_mousePosition.y = ypos;
+	m_mousePosition.x = (float)xpos;
+	m_mousePosition.y = (float)ypos;
 }

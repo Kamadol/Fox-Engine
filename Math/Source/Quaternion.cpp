@@ -22,6 +22,11 @@ Quaternion::Quaternion()
 
 }
 
+Quaternion Quaternion::identity()
+{
+	return Quaternion(1.0f, 0.0f, 0.0f, 0.0f);
+}
+
 Quaternion Quaternion::conj() const
 {
 	return Quaternion(w, -x, -y, -z);

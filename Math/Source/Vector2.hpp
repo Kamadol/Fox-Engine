@@ -7,6 +7,7 @@ class Vector2
 {
 public:
 	Vector2(float x, float y);
+	Vector2(float xy);
 	Vector2();
 
 	static Vector2 zero();

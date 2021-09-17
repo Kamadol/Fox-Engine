@@ -40,13 +40,13 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Graphics\Source;$(SolutionDir)Math\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Graphics\Source;$(SolutionDir)Graphics\Source\Procedural Generation;$(SolutionDir)Math\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,7 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Graphics\Source;$(SolutionDir)Math\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Graphics\Source;$(SolutionDir)Graphics\Source\Procedural Generation;$(SolutionDir)Math\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,13 +128,18 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\ASSIMP\include;$(SolutionDir)Graphics\Source;$(SolutionDir)Graphics\Source\Procedural Generation;$(SolutionDir)Math\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;assimp-vc142-mt.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\GLEW\lib\Release\x64;$(SolutionDir)Dependencies\GLFW\lib-64vc2019;$(SolutionDir)Dependencies\ASSIMP\lib</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -142,8 +147,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\ASSIMP\include;$(SolutionDir)Graphics\Source;$(SolutionDir)Graphics\Source\Procedural Generation;$(SolutionDir)Math\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,6 +157,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;assimp-vc142-mt.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\GLEW\lib\Release\x64;$(SolutionDir)Dependencies\GLFW\lib-64vc2019;$(SolutionDir)Dependencies\ASSIMP\lib</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ProjectReference Include="..\Math\Math.vcxproj">
@@ -160,20 +170,51 @@
   <ItemGroup>
     <ClInclude Include="Source\BitmapFont.hpp" />
     <ClInclude Include="Source\Camera.hpp" />
+    <ClInclude Include="Source\FrameBuffer.hpp" />
     <ClInclude Include="Source\Meshes\CubeMesh.hpp" />
     <ClInclude Include="Source\Graphics.hpp" />
     <ClInclude Include="Source\Input.hpp" />
     <ClInclude Include="Source\Meshes\CylinderMesh.hpp" />
+    <ClInclude Include="Source\Meshes\Material.hpp" />
     <ClInclude Include="Source\Meshes\Mesh.hpp" />
+    <ClInclude Include="Source\Meshes\Model.hpp" />
     <ClInclude Include="Source\Meshes\PlaneMesh.hpp" />
     <ClInclude Include="Source\Meshes\TorusMesh.hpp" />
     <ClInclude Include="Source\MovablePerspCamera.hpp" />
     <ClInclude Include="Source\OrthographicCamera.hpp" />
     <ClInclude Include="Source\PerspectiveCamera.hpp" />
+    <ClInclude Include="Source\Procedural Generation\MaskOperations\AddMaskOperation.hpp" />
+    <ClInclude Include="Source\Procedural Generation\MaskOperations\AvgMaskOperation.hpp" />
+    <ClInclude Include="Source\Procedural Generation\MaskOperations\MaskOperation.hpp" />
+    <ClInclude Include="Source\Procedural Generation\MaskOperations\MaxMaskOperation.hpp" />
+    <ClInclude Include="Source\Procedural Generation\MaskOperations\MinMaskOperation.hpp" />
+    <ClInclude Include="Source\Procedural Generation\MaskOperations\SubMaskOperation.hpp" />
+    <ClInclude Include="Source\Procedural Generation\MaskOperations\TruncLessMaskOperation.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Masks\CoherentNoiseMask.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Masks\CosineMask.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Masks\GradientMask.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Masks\Mask.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Masks\NoiseMask.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Masks\RadialMask.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Noises\CoherentNoise.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Noises\PerlinNoise.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Noises\SimpleNoise.hpp" />
+    <ClInclude Include="Source\Procedural Generation\PostEffects\ClampPostEffect.hpp" />
+    <ClInclude Include="Source\Procedural Generation\PostEffects\PostEffect.hpp" />
+    <ClInclude Include="Source\Procedural Generation\ProceduralGeneration.hpp" />
+    <ClInclude Include="Source\Procedural Generation\RandomGenerators\BasicRandomFloatGen2D.hpp" />
+    <ClInclude Include="Source\Procedural Generation\RandomGenerators\ModRandomFloatGen2D.hpp" />
+    <ClInclude Include="Source\Procedural Generation\RandomGenerators\RandomFloatGen.hpp" />
+    <ClInclude Include="Source\Procedural Generation\RandomGenerators\RandomFloatGen2D.hpp" />
+    <ClInclude Include="Source\Procedural Generation\RandomGenerators\RandomIntGen.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Utility\CircularArray2D.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Utility\Color.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Utility\HeightMap.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Utility\Image.hpp" />
+    <ClInclude Include="Source\Procedural Generation\Utility\Utility.hpp" />
+    <ClInclude Include="Source\Renderers\MeshRenderer.hpp" />
     <ClInclude Include="Source\Renderers\SimpleMeshRenderer.hpp" />
     <ClInclude Include="Source\Renderers\SimpleTextRenderer.hpp" />
-    <ClInclude Include="Source\Scene.hpp" />
-    <ClInclude Include="Source\SceneManager.hpp" />
     <ClInclude Include="Source\Shader.hpp" />
     <ClInclude Include="Source\Renderers\SimpleSpriteRenderer.hpp" />
     <ClInclude Include="Source\Meshes\SphereMesh.hpp" />
@@ -183,22 +224,43 @@
     <ClInclude Include="Source\Transformable.hpp" />
     <ClInclude Include="Source\Window.hpp" />
     <ClInclude Include="Vendor\stb_image.h" />
+    <ClInclude Include="Vendor\stb_image_write.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\BitmapFont.cpp" />
+    <ClCompile Include="Source\FrameBuffer.cpp" />
     <ClCompile Include="Source\Meshes\CubeMesh.cpp" />
     <ClCompile Include="Source\Input.cpp" />
     <ClCompile Include="Source\Meshes\CylinderMesh.cpp" />
+    <ClCompile Include="Source\Meshes\Material.cpp" />
     <ClCompile Include="Source\Meshes\Mesh.cpp" />
+    <ClCompile Include="Source\Meshes\Model.cpp" />
     <ClCompile Include="Source\Meshes\PlaneMesh.cpp" />
     <ClCompile Include="Source\Meshes\TorusMesh.cpp" />
     <ClCompile Include="Source\MovablePerspCamera.cpp" />
     <ClCompile Include="Source\OrthographicCamera.cpp" />
     <ClCompile Include="Source\PerspectiveCamera.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Masks\CoherentNoiseMask.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Masks\CosineMask.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Masks\GradientMask.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Masks\Mask.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Masks\NoiseMask.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Masks\RadialMask.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Noises\CoherentNoise.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Noises\PerlinNoise.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Noises\SimpleNoise.cpp" />
+    <ClCompile Include="Source\Procedural Generation\RandomGenerators\BasicRandomFloatGen2D.cpp" />
+    <ClCompile Include="Source\Procedural Generation\RandomGenerators\ModRandomFloatGen2D.cpp" />
+    <ClCompile Include="Source\Procedural Generation\RandomGenerators\RandomFloatGen.cpp" />
+    <ClCompile Include="Source\Procedural Generation\RandomGenerators\RandomIntGen.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Utility\CircularArray2D.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Utility\Color.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Utility\HeightMap.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Utility\Image.cpp" />
+    <ClCompile Include="Source\Procedural Generation\Utility\Utility.cpp" />
+    <ClCompile Include="Source\Renderers\MeshRenderer.cpp" />
     <ClCompile Include="Source\Renderers\SimpleMeshRenderer.cpp" />
     <ClCompile Include="Source\Renderers\SimpleTextRenderer.cpp" />
-    <ClCompile Include="Source\Scene.cpp" />
-    <ClCompile Include="Source\SceneManager.cpp" />
     <ClCompile Include="Source\Shader.cpp" />
     <ClCompile Include="Source\Renderers\SimpleSpriteRenderer.cpp" />
     <ClCompile Include="Source\Meshes\SphereMesh.cpp" />

@@ -2,31 +2,23 @@
 #define MOVABLE_PERSP_CAMERA_HPP
 
 #include "Camera.hpp"
+#include "Transformable.hpp"
 #include "Vector3.hpp"
 
-class MovablePerspCamera : public Camera
+class MovablePerspCamera : public Camera, public Transformable
 {
 public:
 	MovablePerspCamera(float fov, float aspectRatio, float near, float far);
 
-	void setPosition(Vector3 position);
-	Vector3 getPosition();
-	void move(Vector3 offset);
-	void moveRight(float offset);
-	void moveFront(float offset);
+	void update(float dTime);
 
-	void rotateX(float angle);
-	void rotateY(float angle);
-
-	void setFront(Vector3 front);
-	void setUp(Vector3 up);
-
-	virtual Mat4x4 getMatrix() override;
+	virtual Mat4x4 getMatrix() const override;
 
 private:
-	Vector3 m_position;
-	Vector3 m_front;
-	Vector3 m_up;
+	Quaternion m_currentRotation;
+
+	float m_yAngle;
+	float m_xAngle;
 
 };
 

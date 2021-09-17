@@ -59,3 +59,16 @@ Quaternion Transformable::getRotation() const
 {
 	return m_rotation;
 }
+
+Vector3 Transformable::getRight() const
+{
+	return m_rotation.rotate(Vector3(1.0f, 0.0f, 0.0f));
+}
+Vector3 Transformable::getUp() const
+{
+	return m_rotation.rotate(Vector3(0.0f, 1.0f, 0.0f));
+}
+Vector3 Transformable::getFront() const
+{
+	return m_rotation.rotate(Vector3(0.0f, 0.0f, 1.0f));
+}
