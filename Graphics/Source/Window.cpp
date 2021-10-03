@@ -47,7 +47,7 @@ Window::Window(size_t width, size_t height)
 
 	glfwSetWindowSizeCallback(m_window, window_size_callback);
 
-	glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	//glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 
 	glEnable(GL_DEPTH_TEST);
@@ -75,6 +75,11 @@ void Window::init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+}
+
+void Window::makeCurrent()
+{
+	glfwMakeContextCurrent(m_window);
 }
 
 bool Window::isOpen() const

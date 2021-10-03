@@ -354,6 +354,18 @@ float& Mat4x4::operator()(size_t x, size_t y)
 {
 	return vals[x * 4 + y];
 }
+const float& Mat4x4::operator()(size_t x, size_t y) const
+{
+	return vals[x * 4 + y];
+}
+Vector4& Mat4x4::operator()(size_t x)
+{
+	return columns[x * 4];
+}
+const Vector4& Mat4x4::operator()(size_t x) const
+{
+	return columns[x * 4];
+}
 
 std::ostream& operator<<(std::ostream& end, const Mat4x4& m)
 {

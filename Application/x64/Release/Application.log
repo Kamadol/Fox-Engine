@@ -1,13 +1,13 @@
 ﻿  Application.cpp
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Application\Source\MeshesScene.hpp(33,1): warning C4305: "argument": obcięcie z "double" do "float"
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Application\Source\NormalMappingScene.hpp(22,1): warning C4305: "argument": obcięcie z "double" do "float"
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Application\Source\MinecraftScene.hpp(23,30): warning C4244: "inicjowanie": konwersja z "size_t" do "float", możliwa utrata danych
-C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Application\Source\MinecraftScene.hpp(97,1): warning C4267: "argument": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\oliwi\Desktop\Tak\Programowanie\c++\OPENGL PROJEKTY\Fox-Engine\Application\Source\MeshesScene.hpp(33,1): warning C4305: "argument": obcięcie z "double" do "float"
+C:\Users\oliwi\Desktop\Tak\Programowanie\c++\OPENGL PROJEKTY\Fox-Engine\Application\Source\NormalMappingScene.hpp(22,1): warning C4305: "argument": obcięcie z "double" do "float"
+C:\Users\oliwi\Desktop\Tak\Programowanie\c++\OPENGL PROJEKTY\Fox-Engine\Application\Source\MinecraftScene.hpp(23,30): warning C4244: "inicjowanie": konwersja z "size_t" do "float", możliwa utrata danych
+C:\Users\oliwi\Desktop\Tak\Programowanie\c++\OPENGL PROJEKTY\Fox-Engine\Application\Source\MinecraftScene.hpp(97,1): warning C4267: "argument": konwersja z "size_t" do "unsigned int", możliwa utrata danych
 LINK : warning LNK4098: domyślna biblioteka „LIBCMT” powoduje konflikt z innymi bibliotekami; użyj opcji /NODEFAULTLIB:biblioteka
   Trwa generowanie kodu
-  2 of 880 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  1 of 1047 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    11 functions had inline decision re-evaluated but remain unchanged
+    12 functions had inline decision re-evaluated but remain unchanged
   Zakończono generowanie kodu
 LINK : warning LNK4286: symbol „__glewGenBuffers” zdefiniowany w elemencie „Graphics.lib(glew.obj)” jest importowany przez element „Application.obj”
 LINK : warning LNK4286: symbol „__glewGenVertexArrays” zdefiniowany w elemencie „Graphics.lib(glew.obj)” jest importowany przez element „Application.obj”
@@ -17,5 +17,5 @@ LINK : warning LNK4286: symbol „__glewBindBuffer” zdefiniowany w elemencie �
 LINK : warning LNK4286: symbol „__glewVertexAttribPointer” zdefiniowany w elemencie „Graphics.lib(glew.obj)” jest importowany przez element „Application.obj”
 LINK : warning LNK4286: symbol „__glewBindVertexArray” zdefiniowany w elemencie „Graphics.lib(glew.obj)” jest importowany przez element „Application.obj”
 LINK : warning LNK4286: symbol „__glewEnableVertexAttribArray” zdefiniowany w elemencie „Graphics.lib(glew.obj)” jest importowany przez element „Application.obj”
-Graphics.lib(glew.obj) : warning LNK4099: nie znaleziono pliku PDB „vc120.pdb” z elementem „Graphics.lib(glew.obj)” lub w pozycji „C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\x64\Release\vc120.pdb”; obiekt zostanie skonsolidowany bez informacji debugowania
-  Application.vcxproj -> C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\x64\Release\Application.exe
+Graphics.lib(glew.obj) : warning LNK4099: nie znaleziono pliku PDB „vc120.pdb” z elementem „Graphics.lib(glew.obj)” lub w pozycji „C:\Users\oliwi\Desktop\Tak\Programowanie\c++\OPENGL PROJEKTY\Fox-Engine\x64\Release\vc120.pdb”; obiekt zostanie skonsolidowany bez informacji debugowania
+  Application.vcxproj -> C:\Users\oliwi\Desktop\Tak\Programowanie\c++\OPENGL PROJEKTY\Fox-Engine\x64\Release\Application.exe

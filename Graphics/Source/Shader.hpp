@@ -2,6 +2,7 @@
 #define SHADER_HPP
 
 #include <string>
+#include <unordered_map>
 
 #include "Vector2.hpp"
 #include "Vector3.hpp"
@@ -24,16 +25,18 @@ public:
 	void setUniform2f(const char* uniformName, Vector2 v);
 	void setUniform3f(const char* uniformName, Vector3 v);
 	void setUniform4f(const char* uniformName, Vector4 v);
-	void setUniformMat4(const char* uniformName, const Mat4x4 &m);
+	void setUniformMat4(const char* uniformName, const Mat4x4& m);
 	void setUniformMaterial(const char* uniformName, const Material& material);
 
 private:
+	int getLocation(const char* name);
 	size_t compile(size_t type, const std::string source);
-	size_t createShader(const std::string vert, const std::string frag);
+	size_t createShader(const std::string& vert, const std::string& frag, const std::string& geo);
+	size_t createShader(const std::string& vert, const std::string& frag);
 
 private:
 	unsigned int m_id;
-
+	std::unordered_map<const char*, int> m_locations;
 };
 
 #endif

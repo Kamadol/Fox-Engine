@@ -16,9 +16,9 @@ public:
         mask.setOctaveCount(2);
         mask.setStartZoom(32.0f);
 
-        for (size_t i = 0; i < 32; i++)
+        for (size_t i = 0; i < 100; i++)
         {
-            for (size_t j = 0; j < 32; j++)
+            for (size_t j = 0; j < 100; j++)
             {
                 float height = (size_t)(mask.getValue((float)i, (float)j) * 10.0f);
 

@@ -8,6 +8,22 @@
 int main()
 {
     Window window(1200, 800);
+    Window window2(400, 400);
+    window.makeCurrent();
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
     //Window window(1920, 1080);
     SceneManager sceneManager;
 

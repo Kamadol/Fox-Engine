@@ -48,7 +48,7 @@ public:
         glEnable(GL_DEPTH_TEST);
         FrameBuffer::unbind();
 
-        m_camera.setPosition(Vector3(0.0f, 2.0f, 0.0f));
+        m_camera.setPosition(Vector3(0.0f, 0.0f, 0.0f));
 
         m_rayMarching.bind();
         m_rayMarching.setUniform2f("u_screenSize", m_window->getSize());
@@ -103,7 +103,7 @@ public:
 
         m_rayMarching.setUniform1f("u_time", m_time);
         //m_rayMarching.setUniform3f("u_lightPos", Vector3(5.0f * sinf(m_time / 2.0f), 5.0f, 5.0f * cosf(m_time / 2.0f) + 11.0f));
-        m_rayMarching.setUniform3f("u_lightPos", Vector3(0.0, 6.0, 0.0));
+        m_rayMarching.setUniform3f("u_lightPos", Vector3(0.0, 20.0, 10.0));
         m_rayMarching.setUniformMat4("u_camTransform", m_camera.getTransform());
 
         if (Input::isButtonOncePressed(KEY::T))

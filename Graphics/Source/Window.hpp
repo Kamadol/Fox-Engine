@@ -12,6 +12,8 @@ public:
 	Window(size_t width, size_t height);
 	~Window();	
 
+	void makeCurrent();
+
 	bool isOpen() const;
 	void close();
 	void setShouldClose(bool shouldClose);

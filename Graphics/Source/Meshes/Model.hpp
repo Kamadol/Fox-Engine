@@ -1,9 +1,10 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+#include "TransformableCP.hpp"
 #include "Mesh.hpp"
 
-class Model
+class Model : public TransformableCP
 {
 public:
 	Model(const char* filename);

@@ -171,6 +171,9 @@
     <ClInclude Include="Source\BitmapFont.hpp" />
     <ClInclude Include="Source\Camera.hpp" />
     <ClInclude Include="Source\FrameBuffer.hpp" />
+    <ClInclude Include="Source\GUI\GUIManager.hpp" />
+    <ClInclude Include="Source\GUI\GUITransform.hpp" />
+    <ClInclude Include="Source\GUI\GUIWindow.hpp" />
     <ClInclude Include="Source\Meshes\CubeMesh.hpp" />
     <ClInclude Include="Source\Graphics.hpp" />
     <ClInclude Include="Source\Input.hpp" />
@@ -222,6 +225,7 @@
     <ClInclude Include="Source\Text.hpp" />
     <ClInclude Include="Source\Texture.hpp" />
     <ClInclude Include="Source\Transformable.hpp" />
+    <ClInclude Include="Source\TransformableCP.hpp" />
     <ClInclude Include="Source\Window.hpp" />
     <ClInclude Include="Vendor\stb_image.h" />
     <ClInclude Include="Vendor\stb_image_write.h" />
@@ -229,6 +233,9 @@
   <ItemGroup>
     <ClCompile Include="Source\BitmapFont.cpp" />
     <ClCompile Include="Source\FrameBuffer.cpp" />
+    <ClCompile Include="Source\GUI\GUIManager.cpp" />
+    <ClCompile Include="Source\GUI\GUITransform.cpp" />
+    <ClCompile Include="Source\GUI\GUIWindow.cpp" />
     <ClCompile Include="Source\Meshes\CubeMesh.cpp" />
     <ClCompile Include="Source\Input.cpp" />
     <ClCompile Include="Source\Meshes\CylinderMesh.cpp" />
@@ -268,6 +275,7 @@
     <ClCompile Include="Source\Text.cpp" />
     <ClCompile Include="Source\Texture.cpp" />
     <ClCompile Include="Source\Transformable.cpp" />
+    <ClCompile Include="Source\TransformableCP.cpp" />
     <ClCompile Include="Source\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

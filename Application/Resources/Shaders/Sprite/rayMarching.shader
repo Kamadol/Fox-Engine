@@ -105,9 +105,23 @@ float GetDist(vec3 p)
 {
     float d = 0.0;
 
+    float p1 = p.y + 4.0;
+
+    float s1 = sdSphere(p - vec3(0.0, 4.0, 5.0), 2.0);
+
+    vec3 tp1 = p - vec3(0.0, 4.0, 10.0);
+    tp1.xy *= Rot(u_time);
+
+    float t1 = sdTorus(tp1, 5.0, 1.0);
+
     //d = sdFractal001(p - vec3(0.0, 2.0, 64.0), vec3(16.0), u_steps);
     //d = sdFractal001(p - vec3(0.0, 2.0, 64.0), vec3(16.0), u_steps);
-    d = sdFractal001(OPrep(p, vec3(30.0)), vec3(6.0), u_steps);
+    //d = sdFractal001(OPrep(p, vec3(30.0)), vec3(6.0), u_steps);
+
+    d = min(p1, s1);
+    d = max(d, -t1);
+    //d = sdFractal001(p, vec3(6.0), u_steps);
+    //d = sdSphere(OPrep(p, vec3(5.0, 5.0, 5.0)), 1.0);
 
     return d;
 }

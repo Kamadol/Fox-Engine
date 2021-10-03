@@ -24,6 +24,24 @@ Material Material::obsidian()
 
 	return Material(ambient, diffuse, specular, shininess);
 }
+Material Material::pearl()
+{
+	Vector3 ambient(0.25f, 0.20725f, 0.20725f);
+	Vector3 diffuse(1.0f, 0.829f, 0.829f);
+	Vector3 specular(0.296648f, 0.296648f, 0.296648f);
+	float shininess = 0.088f * 128.0f;
+
+	return Material(ambient, diffuse, specular, shininess);
+}
+Material Material::turquoise()
+{
+	Vector3 ambient(0.1f, 0.18725f, 0.1745f);
+	Vector3 diffuse(0.396f, 0.74151f, 0.69102f);
+	Vector3 specular(0.297254f, 0.30829f, 0.306678f);
+	float shininess = 0.1f * 128.0f;
+
+	return Material(ambient, diffuse, specular, shininess);
+}
 Material Material::ruby()
 {
 	Vector3 ambient(0.1745f, 0.01175f, 0.01175f);
@@ -57,6 +75,33 @@ Material Material::gold()
 	Vector3 diffuse(0.75164f, 0.60648f, 0.22648f);
 	Vector3 specular(0.628281f, 0.555802f, 0.366065f);
 	float shininess = 0.4f * 128.0f;
+
+	return Material(ambient, diffuse, specular, shininess);
+}
+Material Material::brass()
+{
+	Vector3 ambient(0.329412f, 0.223529f, 0.027451f);
+	Vector3 diffuse(0.780392f, 0.568627f, 0.113725f);
+	Vector3 specular(0.992157f, 0.941176f, 0.807843f);
+	float shininess = 0.21794872f * 128.0f;
+
+	return Material(ambient, diffuse, specular, shininess);
+}
+Material Material::bronze()
+{
+	Vector3 ambient(0.2125f, 0.1275f, 0.054f);
+	Vector3 diffuse(0.714f, 0.4284f, 0.18144f);
+	Vector3 specular(0.393548f, 0.271906f, 0.166721f);
+	float shininess = 0.2f * 128.0f;
+
+	return Material(ambient, diffuse, specular, shininess);
+}
+Material Material::copper()
+{
+	Vector3 ambient(0.19125f, 0.0735f, 0.0225f);
+	Vector3 diffuse(0.7038f, 0.27048f, 0.0828f);
+	Vector3 specular(0.256777f, 0.137622f, 0.086014f);
+	float shininess = 0.1f * 128.0f;
 
 	return Material(ambient, diffuse, specular, shininess);
 }

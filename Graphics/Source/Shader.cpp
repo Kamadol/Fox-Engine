@@ -42,6 +42,7 @@ Shader::Shader(const char* shaderPath)
 	std::string version;
 	std::string vertex;
 	std::string fragment;
+	std::string geometry;
 
 	while (std::getline(file, line))
 	{
@@ -67,14 +68,25 @@ Shader::Shader(const char* shaderPath)
 			shaderWrite = 2;
 			continue;
 		}
+		else if (line.find("GEOMETRY_SHADER") != std::string::npos)
+		{
+			geometry += version;
+			shaderWrite = 3;
+			continue;
+		}
 
 		if (shaderWrite == 1)
 			vertex += line + "\n";
 		else if (shaderWrite == 2)
 			fragment += line + "\n";
+		else if (shaderWrite == 3)
+			geometry += line + "\n";
 	}
 
-	m_id = createShader(vertex, fragment);
+	if(geometry.empty())
+		m_id = createShader(vertex, fragment);
+	else
+		m_id = createShader(vertex, fragment, geometry);
 }
 Shader::~Shader()
 {
@@ -92,27 +104,27 @@ void Shader::unbind() const
 
 void Shader::setUniform1i(const char* uniformName, int v)
 {
-	glUniform1i(glGetUniformLocation(m_id, uniformName), v);
+	glUniform1i(getLocation(uniformName), v);
 }
 void Shader::setUniform1f(const char* uniformName, float v)
 {
-	glUniform1f(glGetUniformLocation(m_id, uniformName), v);
+	glUniform1f(getLocation(uniformName), v);
 }
 void Shader::setUniform2f(const char* uniformName, Vector2 v)
 {
-	glUniform2f(glGetUniformLocation(m_id, uniformName), v.x, v.y);
+	glUniform2f(getLocation(uniformName), v.x, v.y);
 }
 void Shader::setUniform3f(const char* uniformName, Vector3 v)
 {
-	glUniform3f(glGetUniformLocation(m_id, uniformName), v.x, v.y, v.z);
+	glUniform3f(getLocation(uniformName), v.x, v.y, v.z);
 }
 void Shader::setUniform4f(const char* uniformName, Vector4 v)
 {
-	glUniform4f(glGetUniformLocation(m_id, uniformName), v.x, v.y, v.z, v.w);
+	glUniform4f(getLocation(uniformName), v.x, v.y, v.z, v.w);
 }
 void Shader::setUniformMat4(const char* uniformName, const Mat4x4& m)
 {
-	glUniformMatrix4fv(glGetUniformLocation(m_id, uniformName), 1, GL_FALSE, &m.vals[0]);
+	glUniformMatrix4fv(getLocation(uniformName), 1, GL_FALSE, &m(0, 0));
 }
 void Shader::setUniformMaterial(const char* uniformName, const Material& material)
 {
@@ -126,8 +138,33 @@ void Shader::setUniformMaterial(const char* uniformName, const Material& materia
 	glUniform3f(glGetUniformLocation(m_id, (name + ".ambient"  ).c_str()), amb.x, amb.y, amb.z);
 	glUniform3f(glGetUniformLocation(m_id, (name + ".diffuse"  ).c_str()), dif.x, dif.y, dif.z);
 	glUniform3f(glGetUniformLocation(m_id, (name + ".specular" ).c_str()), spe.x, spe.y, spe.z);
+
+	//glUniform1f(getLocation((name + ".shininess").c_str()), material.m_shininess);
+	//glUniform3f(getLocation((name + ".ambient"  ).c_str()), amb.x, amb.y, amb.z);
+	//glUniform3f(getLocation((name + ".diffuse"  ).c_str()), dif.x, dif.y, dif.z);
+	//glUniform3f(getLocation((name + ".specular" ).c_str()), spe.x, spe.y, spe.z);
 }
 
+int Shader::getLocation(const char* name)
+{
+	if (m_locations.find(name) != m_locations.end())
+	{
+		return m_locations[name];
+	}
+	else
+	{
+		int loc = glGetUniformLocation(m_id, name);
+		if (loc != -1)
+		{
+			m_locations[name] = loc;
+			return loc;
+		}
+		else
+		{
+			//std::cout << "Shader uniform " << name << " doesn't exist" << std::endl;
+		}
+	}
+}
 size_t Shader::compile(size_t type, const std::string source)
 {
 	size_t id = glCreateShader(type);
@@ -156,7 +193,26 @@ size_t Shader::compile(size_t type, const std::string source)
 
 	return id;
 }
-size_t Shader::createShader(const std::string vert, const std::string frag)
+size_t Shader::createShader(const std::string& vert, const std::string& frag, const std::string& geo)
+{
+	size_t program = glCreateProgram();
+	size_t vs = compile(GL_VERTEX_SHADER, vert);
+	size_t fs = compile(GL_FRAGMENT_SHADER, frag);
+	size_t gs = compile(GL_GEOMETRY_SHADER, geo);
+
+	glAttachShader(program, vs);
+	glAttachShader(program, fs);
+	glAttachShader(program, gs);
+	glLinkProgram(program);
+	glValidateProgram(program);
+
+	glDeleteShader(vs);
+	glDeleteShader(fs);
+	glDeleteShader(gs);
+
+	return program;
+}
+size_t Shader::createShader(const std::string& vert, const std::string& frag)
 {
 	size_t program = glCreateProgram();
 	size_t vs = compile(GL_VERTEX_SHADER, vert);

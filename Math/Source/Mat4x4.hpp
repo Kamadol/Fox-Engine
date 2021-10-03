@@ -50,6 +50,9 @@ public:
 	Mat4x4& operator/=(float a);
 
 	float& operator()(size_t x, size_t y);
+	const float& operator()(size_t x, size_t y) const;
+	Vector4& operator()(size_t x);
+	const Vector4& operator()(size_t x) const;
 
 	friend std::ostream& operator<<(std::ostream& end, const Mat4x4& m);
 
