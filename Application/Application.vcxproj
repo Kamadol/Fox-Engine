@@ -34,8 +34,11 @@
     <None Include="Resources\Shaders\Mesh\singleColor.shader" />
     <None Include="Resources\Shaders\Mesh\batchShader.shader" />
     <None Include="Resources\Shaders\Mesh\timeTest.shader" />
+    <None Include="Resources\Shaders\Sprite\batchSprite.shader" />
+    <None Include="Resources\Shaders\Sprite\GUIShader.shader" />
     <None Include="Resources\Shaders\Sprite\postProcess.shader" />
     <None Include="Resources\Shaders\Sprite\rayMarching.shader" />
+    <None Include="Resources\Shaders\Sprite\text.shader" />
     <None Include="Resources\Shaders\Text\textShader.shader" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +53,7 @@
     <Image Include="Resources\Textures\textAtlas77.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Font Include="Resources\Fonts\arial.ttf" />
     <Font Include="Resources\Fonts\Pixellari.ttf" />
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +169,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\ASSIMP\include;$(SolutionDir)Math\Source;$(SolutionDir)Graphics\Source;$(SolutionDir)Procedural Generation\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\ASSIMP\include;$(SolutionDir)Dependencies\FreeType\include;$(SolutionDir)Math\Source;$(SolutionDir)Graphics\Source;$(SolutionDir)Procedural Generation\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -180,7 +184,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\ASSIMP\include;$(SolutionDir)Math\Source;$(SolutionDir)Graphics\Source;$(SolutionDir)Procedural Generation\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\ASSIMP\include;$(SolutionDir)Dependencies\FreeType\include;$(SolutionDir)Math\Source;$(SolutionDir)Graphics\Source;$(SolutionDir)Procedural Generation\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

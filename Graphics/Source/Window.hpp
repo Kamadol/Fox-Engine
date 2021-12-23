@@ -12,6 +12,9 @@ public:
 	Window(size_t width, size_t height);
 	~Window();	
 
+	static void wireFrameMode(bool mode);
+	static void visibleCursor(bool mode);
+
 	void makeCurrent();
 
 	bool isOpen() const;
@@ -33,11 +36,7 @@ private:
 private:
 	void init();
 
-	static size_t m_windowCount;
-
 	GLFWwindow* m_window;
-
-private:
 
 };
 

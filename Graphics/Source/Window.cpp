@@ -7,12 +7,26 @@
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
 
+void Window::wireFrameMode(bool mode)
+{
+	if (mode)
+	{
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	}
+	else
+	{
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	}
+}
+void Window::visibleCursor(bool mode)
+{
+
+}
+
 void Window::window_size_callback(GLFWwindow* window, int width, int height)
 {
 	glViewport(0, 0, width, width);
 }
-
-size_t Window::m_windowCount = 0;
 
 Window::Window(size_t width, size_t height)
 {
@@ -35,10 +49,9 @@ Window::Window(size_t width, size_t height)
 	}
 	std::cout << glGetString(GL_VERSION) << std::endl;
 
-	m_windowCount++;
-
 	//some flags and window stuff inits
-	glfwSwapInterval(1);
+	glfwSwapInterval(0);
+	//glfwSwapInterval(1);
 	glfwSetWindowPos(m_window, 400, 100);
 
 	glfwSetKeyCallback(m_window, Input::key_callback);
@@ -48,6 +61,7 @@ Window::Window(size_t width, size_t height)
 	glfwSetWindowSizeCallback(m_window, window_size_callback);
 
 	//glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
 
 	glEnable(GL_DEPTH_TEST);
@@ -59,9 +73,7 @@ Window::~Window()
 {
 	glfwDestroyWindow(m_window);
 
-	m_windowCount--;
-	if (m_windowCount == 0)
-		glfwTerminate();
+	glfwTerminate();
 }
 
 void Window::init()
@@ -75,6 +87,8 @@ void Window::init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	//glfwWindowHint(GLFW_SAMPLES, 4);
+	//glEnable(GL_MULTISAMPLE);
 }
 
 void Window::makeCurrent()

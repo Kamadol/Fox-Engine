@@ -21,7 +21,7 @@ public:
         m_up(Vector3(0.1f, 1.0f, 0.1f)),
         m_front(Vector3(0.1f, 0.1f, 1.0f)),
         m_fbo(1200, 800),
-        m_sprite(Vector3(0.0f, 0.0f, 0.0f), Vector2(2.0f, 2.0f)),
+        m_sprite(Vector3(0.0f, 0.0f, 0.0f), Vector2(2.0f, 2.0f), Vector4(0.0f, 0.0f, 0.0f, 1.0f)),
         m_spriteShader("Resources/Shaders/Sprite/postProcess.shader")
     {
         m_right.setPosition(Vector3(0.0f, 0.0f, -4.0f));
@@ -55,7 +55,7 @@ public:
         if (Input::isButtonPressed(KEY::ESC))
             m_window->setShouldClose(true);
         if (Input::isButtonOncePressed(KEY::P))
-            m_manager->changeScene("normalMappingScene");
+            m_manager->changeScene("rayMarchingScene");
 
         m_torus.rotate(Vector3(1.0f, 0.0f, 0.0f), 3.1415f / 8.0f * m_dTime);
 
@@ -102,8 +102,8 @@ public:
         m_spriteRenderer.submit(m_sprite, m_spriteShader, Mat4x4::identity());
         m_fbo.unbindTexture();
 
-        m_window->pollEvents();
-        m_window->swapBuffers();
+        //m_window->pollEvents();
+        //m_window->swapBuffers();
     }
 
 private:

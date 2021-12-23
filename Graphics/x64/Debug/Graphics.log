@@ -1,3 +1,204 @@
-﻿  FrameBuffer.cpp
-assimp-vc142-mt.lib(assimp-vc142-mt.dll) : warning LNK4006: element __NULL_IMPORT_DESCRIPTOR jest już zdefiniowany w elemencie opengl32.lib(OPENGL32.dll); druga definicja została zignorowana
-  Graphics.vcxproj -> C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\x64\Debug\Graphics.lib
+﻿  Font.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Font.cpp(70,62): warning C4267: "inicjowanie": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Font.cpp(71,62): warning C4267: "inicjowanie": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+  GUILayer.cpp
+  GUIWindow.cpp
+  CubeMesh.cpp
+  Input.cpp
+  CylinderMesh.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\CylinderMesh.cpp(53,44): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\CylinderMesh.cpp(57,43): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+  Mesh.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\Mesh.cpp(114,70): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+  Model.cpp
+  PlaneMesh.cpp
+  TorusMesh.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\TorusMesh.cpp(35,48): warning C4267: "inicjowanie": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\TorusMesh.cpp(39,96): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\TorusMesh.cpp(40,96): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\TorusMesh.cpp(41,96): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\TorusMesh.cpp(43,96): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\TorusMesh.cpp(44,96): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\TorusMesh.cpp(45,96): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+  MovablePerspCamera.cpp
+  CosineMask.cpp
+  GradientMask.cpp
+  Line.cpp
+  LineRenderer.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\LineRenderer.cpp(36,54): warning C4267: "inicjowanie": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\LineRenderer.cpp(37,53): warning C4267: "inicjowanie": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\LineRenderer.cpp(65,31): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\LineRenderer.cpp(66,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\LineRenderer.cpp(67,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\LineRenderer.cpp(68,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\LineRenderer.cpp(69,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\LineRenderer.cpp(70,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+  MeshRenderer.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\MeshRenderer.cpp(51,41): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+  SimpleMeshRenderer.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\SimpleMeshRenderer.cpp(55,75): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+  TextRenderer.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(43,31): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(44,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(45,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(46,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(47,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(48,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(84,43): warning C4267: "argument": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(86,79): warning C4267: "argument": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(117,42): warning C4267: "argument": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(119,78): warning C4267: "argument": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(142,85): warning C4267: "argument": konwersja z "size_t" do "GLsizei", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(158,58): warning C4267: "argument": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\TextRenderer.cpp(172,95): warning C4267: "argument": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+  SpriteRenderer.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\SpriteRenderer.cpp(14,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\SpriteRenderer.cpp(15,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\SpriteRenderer.cpp(16,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\SpriteRenderer.cpp(17,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\SpriteRenderer.cpp(18,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Renderers\SpriteRenderer.cpp(19,33): warning C4267: "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+  SimpleSpriteRenderer.cpp
+  Generowanie kodu...
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Font.cpp(10): error C4716: "Character::getTextureRect": musi zwracać wartość
+  Trwa kompilowanie...
+  SphereMesh.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(46,28): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(47,43): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(57,45): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(58,45): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(59,54): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(61,54): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(62,45): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(63,54): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(66,47): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(67,38): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(68,47): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(70,38): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(71,43): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(72,47): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(79,38): warning C4267: "argument": konwersja z "size_t" do "const _Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(80,46): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(81,48): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(83,41): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(84,37): warning C4267: "argument": konwersja z "size_t" do "const _Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Meshes\SphereMesh.cpp(85,48): warning C4267: "argument": konwersja z "size_t" do "_Ty", możliwa utrata danych
+          with
+          [
+              _Ty=unsigned int
+          ]
+  Sprite.cpp
+  RenderText.cpp
+  Texture.cpp
+  SpriteVertex.cpp
+  Window.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\Window.cpp(31,69): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
+  Generowanie kodu...

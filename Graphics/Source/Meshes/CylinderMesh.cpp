@@ -1,6 +1,6 @@
 #include "CylinderMesh.hpp"
 
-CylinderMesh::CylinderMesh(size_t sideQuads, float height, float radius)
+CylinderMesh::CylinderMesh(unsigned int sideQuads, float height, float radius)
 {
 	m_vertices.push_back(MeshVertex(Vector3(0.0f, -height * 0.5f, 0.0f), Vector2(), Vector3(0.0f, -1.0f, 0.0f)));
 

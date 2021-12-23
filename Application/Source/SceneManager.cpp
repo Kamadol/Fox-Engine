@@ -4,15 +4,18 @@
 
 #include "Scene.hpp"
 
-SceneManager::SceneManager()
-	:m_previousTime(0.0f), m_dTime(0.0f), m_currentScene(nullptr)
+SceneManager::SceneManager(Window* window)
+	:m_previousTime(0.0f), m_dTime(0.0f),
+	m_window(window),
+	m_currentScene(nullptr)
 {
 
 }
 
 void SceneManager::addScene(Scene* scene)
 { 
-	m_scenes.push_back(scene); 
+	scene->setSceneManager(this);
+	m_scenes.push_back(scene);
 }
 bool SceneManager::changeScene(const std::string& sceneName)
 {
@@ -44,14 +47,29 @@ bool SceneManager::shouldClose()
 }
 void SceneManager::update()
 {
-	m_dTime = glfwGetTime() - m_previousTime;
-	m_previousTime = glfwGetTime();
+	float currentTome = (float)glfwGetTime();
+
+	m_dTime = currentTome - m_previousTime;
+	m_previousTime = currentTome;
 
 	m_currentScene->onUpdate();
+}
+void SceneManager::draw()
+{
 	m_currentScene->onRender();
 }
 
-float SceneManager::getDeltaTime() const 
-{ 
-	return m_dTime; 
+void SceneManager::startDrawing()
+{
+	m_window->clear();
+}
+void SceneManager::endDrawing()
+{
+	m_window->pollEvents();
+	m_window->swapBuffers();
+}
+
+float SceneManager::getDeltaTime() const
+{
+	return m_dTime;
 }

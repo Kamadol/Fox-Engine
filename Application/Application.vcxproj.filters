@@ -39,6 +39,9 @@
     <None Include="Resources\Models\minisaur.stl" />
     <None Include="Resources\Shaders\Mesh\planarPointLight.shader" />
     <None Include="Resources\Shaders\Mesh\batchShader.shader" />
+    <None Include="Resources\Shaders\Sprite\batchSprite.shader" />
+    <None Include="Resources\Shaders\Sprite\text.shader" />
+    <None Include="Resources\Shaders\Sprite\GUIShader.shader" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Textures\digitFont.png">
@@ -91,5 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Fonts\Pixellari.ttf" />
+    <Font Include="Resources\Fonts\arial.ttf" />
   </ItemGroup>
 </Project>

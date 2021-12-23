@@ -1,4 +1,64 @@
-﻿  Window.cpp
-C:\Users\oliwi\Desktop\Tak\Programowanie\c++\OPENGL PROJEKTY\Fox-Engine\Graphics\Source\Window.cpp(21,69): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
+﻿cl : wiersz polecenia warning D9002: ignorowanie nieznanej opcji „/arch:SSE2”
+  GUILayer.cpp
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(17,31): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(17,23): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(17,54): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(17,46): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(18,33): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(18,23): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(18,54): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(18,46): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(19,33): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(19,23): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(19,54): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
+C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\Graphics\Source\GUI\GUILayer.cpp(19,46): warning C4244: "argument": konwersja z "float" do "T", możliwa utrata danych
+          with
+          [
+              T=int
+          ]
 assimp-vc142-mt.lib(assimp-vc142-mt.dll) : warning LNK4006: element __NULL_IMPORT_DESCRIPTOR jest już zdefiniowany w elemencie opengl32.lib(OPENGL32.dll); druga definicja została zignorowana
-  Graphics.vcxproj -> C:\Users\oliwi\Desktop\Tak\Programowanie\c++\OPENGL PROJEKTY\Fox-Engine\x64\Release\Graphics.lib
+  Graphics.vcxproj -> C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\x64\Release\Graphics.lib

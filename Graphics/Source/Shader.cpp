@@ -102,31 +102,31 @@ void Shader::unbind() const
 	glUseProgram(0);
 }
 
-void Shader::setUniform1i(const char* uniformName, int v)
+void Shader::setUniform1i(const char* uniformName, int v) const
 {
 	glUniform1i(getLocation(uniformName), v);
 }
-void Shader::setUniform1f(const char* uniformName, float v)
+void Shader::setUniform1f(const char* uniformName, float v) const
 {
 	glUniform1f(getLocation(uniformName), v);
 }
-void Shader::setUniform2f(const char* uniformName, Vector2 v)
+void Shader::setUniform2f(const char* uniformName, Vector2 v) const
 {
 	glUniform2f(getLocation(uniformName), v.x, v.y);
 }
-void Shader::setUniform3f(const char* uniformName, Vector3 v)
+void Shader::setUniform3f(const char* uniformName, Vector3 v) const
 {
 	glUniform3f(getLocation(uniformName), v.x, v.y, v.z);
 }
-void Shader::setUniform4f(const char* uniformName, Vector4 v)
+void Shader::setUniform4f(const char* uniformName, Vector4 v) const
 {
 	glUniform4f(getLocation(uniformName), v.x, v.y, v.z, v.w);
 }
-void Shader::setUniformMat4(const char* uniformName, const Mat4x4& m)
+void Shader::setUniformMat4(const char* uniformName, const Mat4x4& m) const
 {
 	glUniformMatrix4fv(getLocation(uniformName), 1, GL_FALSE, &m(0, 0));
 }
-void Shader::setUniformMaterial(const char* uniformName, const Material& material)
+void Shader::setUniformMaterial(const char* uniformName, const Material& material) const
 {
 	std::string name(uniformName);
 
@@ -143,31 +143,25 @@ void Shader::setUniformMaterial(const char* uniformName, const Material& materia
 	//glUniform3f(getLocation((name + ".ambient"  ).c_str()), amb.x, amb.y, amb.z);
 	//glUniform3f(getLocation((name + ".diffuse"  ).c_str()), dif.x, dif.y, dif.z);
 	//glUniform3f(getLocation((name + ".specular" ).c_str()), spe.x, spe.y, spe.z);
+
+	//setUniform1f((name + ".shininess").c_str(), material.m_shininess);
+	//setUniform3f((name + ".ambient"  ).c_str(), Vector3(amb.x, amb.y, amb.z));
+	//setUniform3f((name + ".diffuse"  ).c_str(), Vector3(dif.x, dif.y, dif.z));
+	//setUniform3f((name + ".specular" ).c_str(), Vector3(spe.x, spe.y, spe.z));
 }
 
-int Shader::getLocation(const char* name)
+int Shader::getLocation(const char* name) const
 {
 	if (m_locations.find(name) != m_locations.end())
-	{
 		return m_locations[name];
-	}
-	else
-	{
-		int loc = glGetUniformLocation(m_id, name);
-		if (loc != -1)
-		{
-			m_locations[name] = loc;
-			return loc;
-		}
-		else
-		{
-			//std::cout << "Shader uniform " << name << " doesn't exist" << std::endl;
-		}
-	}
+
+	int loc = glGetUniformLocation(m_id, name);
+	m_locations[name] = loc;
+	return loc;
 }
-size_t Shader::compile(size_t type, const std::string source)
+unsigned int Shader::compile(unsigned int type, const std::string source)
 {
-	size_t id = glCreateShader(type);
+	unsigned int id = glCreateShader(type);
 	const char* s = source.c_str();
 	glShaderSource(id, 1, &s, nullptr);
 	glCompileShader(id);
@@ -193,12 +187,12 @@ size_t Shader::compile(size_t type, const std::string source)
 
 	return id;
 }
-size_t Shader::createShader(const std::string& vert, const std::string& frag, const std::string& geo)
+unsigned int Shader::createShader(const std::string& vert, const std::string& frag, const std::string& geo)
 {
-	size_t program = glCreateProgram();
-	size_t vs = compile(GL_VERTEX_SHADER, vert);
-	size_t fs = compile(GL_FRAGMENT_SHADER, frag);
-	size_t gs = compile(GL_GEOMETRY_SHADER, geo);
+	unsigned int program = glCreateProgram();
+	unsigned int vs = compile(GL_VERTEX_SHADER, vert);
+	unsigned int fs = compile(GL_FRAGMENT_SHADER, frag);
+	unsigned int gs = compile(GL_GEOMETRY_SHADER, geo);
 
 	glAttachShader(program, vs);
 	glAttachShader(program, fs);
@@ -212,11 +206,11 @@ size_t Shader::createShader(const std::string& vert, const std::string& frag, co
 
 	return program;
 }
-size_t Shader::createShader(const std::string& vert, const std::string& frag)
+unsigned int Shader::createShader(const std::string& vert, const std::string& frag)
 {
-	size_t program = glCreateProgram();
-	size_t vs = compile(GL_VERTEX_SHADER, vert);
-	size_t fs = compile(GL_FRAGMENT_SHADER, frag);
+	unsigned int program = glCreateProgram();
+	unsigned int vs = compile(GL_VERTEX_SHADER, vert);
+	unsigned int fs = compile(GL_FRAGMENT_SHADER, frag);
 
 	glAttachShader(program, vs);
 	glAttachShader(program, fs);

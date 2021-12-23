@@ -1,28 +1,37 @@
 #ifndef GUI_TRANSFORM_HPP
 #define GUI_TRANSFORM_HPP
 
-#include "Vector2.hpp"
+#include <vector>
 
-#define TOP_BORDER 3.0f
-#define RIGHT_BORDER 3.0f
-#define BOTTOM_BORDER 3.0f
-#define LEFT_BORDER 3.0f
+#include "Utility/Vec2.hpp"
 
 class GUITransform
 {
 public:
+	GUITransform(Vec2i position, Vec2i size);
 	GUITransform();
 
-private:
-	Vector2 m_position;
-	size_t m_xSize, m_ySize;
+	void addChildren(GUITransform* children);
 
-private:
+	//Point in global gui space
+	bool contains(Vec2i point);
+
+	void setPosition(Vec2i position);
+	void setWorldPosition(Vec2i position);
+	void move(Vec2i offset);
+	Vec2i getLocalPosition() const;
+	Vec2i getWorldPosition() const;
+
+	void setSize(Vec2i size);
+	Vec2i getSize() const;
+
+protected:
+	Vec2i m_position;
+	Vec2i m_size;
+
+protected:
 	GUITransform* m_parent;
-	GUITransform* m_up;
-	GUITransform* m_right;
-	GUITransform* m_down;
-	GUITransform* m_left;
+	std::vector<GUITransform*> m_children;
 
 };
 

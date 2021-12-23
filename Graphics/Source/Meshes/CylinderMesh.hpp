@@ -6,7 +6,7 @@
 class CylinderMesh : public Mesh
 {
 public:
-	CylinderMesh(size_t sideQuads, float height, float radius);
+	CylinderMesh(unsigned int sideQuads, float height, float radius);
 
 private:
 

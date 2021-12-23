@@ -2,8 +2,16 @@
 
 #include "GL/glew.h"
 
+#include "Vertices/SpriteVertex.hpp"
+
 SimpleSpriteRenderer::SimpleSpriteRenderer()
 {
+	unsigned int indices[6] =
+	{
+		0, 1, 2,
+		0, 2, 3
+	};
+
 	m_indices[0] = 0;
 	m_indices[1] = 1;
 	m_indices[2] = 2;

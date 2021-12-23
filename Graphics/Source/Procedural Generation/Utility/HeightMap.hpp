@@ -18,15 +18,15 @@ namespace pg
 	struct HeightStep
 	{
 		HeightStep(float from, float to, Color colorFrom, Color colorTo, Interpolation interpolation = Interpolation::LERP)
-			:m_from(from), m_to(to), m_colorFrom(colorFrom), m_colorTo(colorTo)
+			:from(from), to(to), colorFrom(colorFrom), colorTo(colorTo)
 		{
 
 		}
-		float m_from = 0.0f;
-		float m_to = 1.0f;
-		Color m_colorFrom = Color::White;
-		Color m_colorTo = Color::Black;
-		Interpolation m_interpolation = Interpolation::LERP;
+		float from = 0.0f;
+		float to = 1.0f;
+		Color colorFrom = Color::White;
+		Color colorTo = Color::Black;
+		Interpolation interpolation = Interpolation::LERP;
 	};
 	class HeightMap
 	{

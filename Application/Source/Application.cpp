@@ -8,42 +8,14 @@
 int main()
 {
     Window window(1200, 800);
-    Window window2(400, 400);
-    window.makeCurrent();
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
     //Window window(1920, 1080);
-    SceneManager sceneManager;
+    SceneManager sceneManager(&window);
+    GUILayer GUI;
 
-    //scene
     MeshesScene meshesScene(&window, "meshesScene");
-	meshesScene.setSceneManager(&sceneManager);
-
-    //scene
     NormalMappingScene normalMappingScene(&window, "normalMappingScene");
-    normalMappingScene.setSceneManager(&sceneManager);
-
-    //scene
     RayMarchingScene rayMarchingScene(&window, "rayMarchingScene");
-    rayMarchingScene.setSceneManager(&sceneManager);
-    
-    //scene
     MinecraftScene minecraftScene(&window, "minecraftScene");
-    minecraftScene.setSceneManager(&sceneManager);
-
-
 
     sceneManager.addScene(&meshesScene);
     sceneManager.addScene(&normalMappingScene);
@@ -51,14 +23,39 @@ int main()
     sceneManager.addScene(&minecraftScene);
 
     sceneManager.changeScene("meshesScene");
-    //sceneManager.changeScene("normalMappingScene");
-    //sceneManager.changeScene("rayMarchingScene");
+    sceneManager.changeScene("normalMappingScene");
     sceneManager.changeScene("minecraftScene");
+    sceneManager.changeScene("rayMarchingScene");
 
     while (!sceneManager.shouldClose())
     {
+        //updating
         sceneManager.update();
+        GUI.setDeltaTime(sceneManager.getDeltaTime());
+        GUI.update();
+
+        //rendering
+        sceneManager.startDrawing();
+
+        sceneManager.draw();
+        GUI.draw();
+
+        sceneManager.endDrawing();
     }
+
+    
+
+
+    /*
+    Text text1 = "0123456789";
+    text1.setFont(font);
+    text1.setFontSize(50);
+    
+    
+    
+    */
+
+
 
 
 

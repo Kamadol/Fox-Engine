@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+class Vector4;
 class Vector3
 {
 public:
@@ -37,6 +38,8 @@ public:
 	Vector3 operator^(const Vector3& v) const;
 	Vector3 operator*(float a) const;
 	Vector3 operator/(float a) const;
+
+	Vector3& operator=(const Vector4& v);
 
 	friend std::ostream& operator<<(std::ostream& end, const Vector3& v);
 

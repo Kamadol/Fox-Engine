@@ -3,51 +3,27 @@
 
 #include "Vector2.hpp"
 
-struct TextureRect
-{
-	TextureRect()
-	{
+#include "Utility/Vec2.hpp"
 
-	}
-	TextureRect(Vector2 position, Vector2 size)
-	{
-		dl = position;
-		dr = Vector2(position.x + size.x, position.y);
-		ur = Vector2(position.x + size.x, position.y + size.y);
-		ul = Vector2(position.x,          position.y + size.y);
-	}
-	TextureRect(Vector2 pixelPosition, Vector2 quadPixelSize, Vector2 texturePixelSize)
-	{
-		Vector2 size(quadPixelSize.x / texturePixelSize.x, quadPixelSize.y / texturePixelSize.y);
-		Vector2 position(pixelPosition.x / texturePixelSize.x, pixelPosition.y / texturePixelSize.y);
-
-		dl = position;
-		dr = Vector2(position.x + size.x, position.y);
-		ur = Vector2(position.x + size.x, position.y + size.y);
-		ul = Vector2(position.x,          position.y + size.y);
-	}
-
-	Vector2 dl;
-	Vector2 dr;
-	Vector2 ur;
-	Vector2 ul;
-};
 class Texture
 {
 public:
 	Texture();
-	bool load(const char* filename);
+	~Texture();
+	Texture(Texture&& other) noexcept;
+
+	bool create(const char* filename);
+	bool create(Vec2i size, unsigned char* data, unsigned int channels);
+	bool create(Vec2i size, unsigned char* data);
 
 	void bind() const;
 	void unbind() const;
 
-	Vector2 getSize() const;
-
-	//void activateTextureUnit(size_t unit) const;
+	Vec2i getSize() const;
 
 protected:
 	unsigned int m_id;
-	int m_xSize, m_ySize;
+	Vec2i m_size;
 
 };
 

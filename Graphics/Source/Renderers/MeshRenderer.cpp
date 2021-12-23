@@ -63,7 +63,7 @@ void MeshRenderer::submit(const Mesh& mesh, Vector3* offsets, unsigned int count
 
 	glBindVertexArray(0);
 }
-void MeshRenderer::flush(Shader& shader, const Mat4x4& camera)
+void MeshRenderer::flush(const Shader& shader, const Mat4x4& camera)
 {
 	shader.bind();
 	shader.setUniformMat4("u_camera", camera);

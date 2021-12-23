@@ -1,5 +1,7 @@
 #include "Vector3.hpp"
 
+#include "Vector4.hpp"
+
 Vector3::Vector3(float x, float y, float z)
 	:x(x), y(y), z(z)
 {
@@ -133,6 +135,14 @@ Vector3 Vector3::operator*(float a) const
 Vector3 Vector3::operator/(float a) const
 {
 	return Vector3(x / a, y / a, z / a);
+}
+
+Vector3& Vector3::operator=(const Vector4& v)
+{
+	x = v.x;
+	y = v.y;
+	z = v.z;
+	return *this;
 }
 
 std::ostream& operator<<(std::ostream& end, const Vector3& v)

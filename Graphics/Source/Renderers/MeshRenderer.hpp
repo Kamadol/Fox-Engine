@@ -11,7 +11,7 @@ public:
 	~MeshRenderer();
 
 	void submit(const Mesh& mesh, Vector3* offsets, unsigned int count);
-	void flush(Shader& shader, const Mat4x4& camera);
+	void flush(const Shader& shader, const Mat4x4& camera);
 
 private:
 	unsigned int m_VAO;

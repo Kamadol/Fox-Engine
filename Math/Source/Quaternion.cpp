@@ -93,6 +93,7 @@ Quaternion Quaternion::lerp(Quaternion other, float a)
 }
 Quaternion Quaternion::slerp(Quaternion other, float a)
 {
+	//doesnt work
 	float halfAngle = acosf(((*this) * other.conj()).w);
 
 	return (*this) * sinf((1.0f - a) * halfAngle) / sinf(halfAngle) + other * sinf(a * halfAngle) / sinf(halfAngle);

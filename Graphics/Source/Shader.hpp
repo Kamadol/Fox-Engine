@@ -20,23 +20,23 @@ public:
 	void bind() const;
 	void unbind() const;
 
-	void setUniform1i(const char* uniformName, int v);
-	void setUniform1f(const char* uniformName, float v);
-	void setUniform2f(const char* uniformName, Vector2 v);
-	void setUniform3f(const char* uniformName, Vector3 v);
-	void setUniform4f(const char* uniformName, Vector4 v);
-	void setUniformMat4(const char* uniformName, const Mat4x4& m);
-	void setUniformMaterial(const char* uniformName, const Material& material);
+	void setUniform1i(const char* uniformName, int v) const;
+	void setUniform1f(const char* uniformName, float v) const;
+	void setUniform2f(const char* uniformName, Vector2 v) const;
+	void setUniform3f(const char* uniformName, Vector3 v) const;
+	void setUniform4f(const char* uniformName, Vector4 v) const;
+	void setUniformMat4(const char* uniformName, const Mat4x4& m) const;
+	void setUniformMaterial(const char* uniformName, const Material& material) const;
 
 private:
-	int getLocation(const char* name);
-	size_t compile(size_t type, const std::string source);
-	size_t createShader(const std::string& vert, const std::string& frag, const std::string& geo);
-	size_t createShader(const std::string& vert, const std::string& frag);
+	int getLocation(const char* name) const;
+	unsigned int compile(unsigned int type, const std::string source);
+	unsigned int createShader(const std::string& vert, const std::string& frag, const std::string& geo);
+	unsigned int createShader(const std::string& vert, const std::string& frag);
 
 private:
 	unsigned int m_id;
-	std::unordered_map<const char*, int> m_locations;
+	mutable std::unordered_map<const char*, int> m_locations;
 };
 
 #endif

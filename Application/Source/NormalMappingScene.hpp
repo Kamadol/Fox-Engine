@@ -17,7 +17,7 @@ public:
     {
         m_lightAngle = 0.0f;
 
-        m_foxMesh.load("Resources/Models/fox002.stl");
+        m_foxMesh.load("Resources/Models/fox.stl");
         m_foxMesh.scale(Vector3(0.02f));
         m_foxMesh.rotate(Vector3(1.0f, 0.0f, 0.0f), -3.1415 * 0.5f);
 

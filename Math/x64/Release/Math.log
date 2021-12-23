@@ -1,3 +1,7 @@
 ﻿  Mat4x4.cpp
   Quaternion.cpp
-  Math.vcxproj -> C:\Users\oliwi\Desktop\Tak\Programowanie\c++\OPENGL PROJEKTY\Fox-Engine\x64\Release\Math.lib
+  Utility.cpp
+  Vector2.cpp
+  Vector3.cpp
+  Vector4.cpp
+  Math.vcxproj -> C:\Users\kamadol\Desktop\Nowy folder\Programowanie\C++\projekty w visualu\Fox-Engine\x64\Release\Math.lib

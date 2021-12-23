@@ -279,9 +279,9 @@ Mat4x4 Mat4x4::operator/(float a)
 Vector3 Mat4x4::operator*(const Vector3& v)
 {
 	return Vector3(
-		vals[0] * v.x + vals[4] * v.y + vals[ 8] * v.z + vals[11],
-		vals[1] * v.x + vals[5] * v.y + vals[ 9] * v.z + vals[12],
-		vals[2] * v.x + vals[6] * v.y + vals[10] * v.z + vals[13]
+		vals[0] * v.x + vals[4] * v.y + vals[ 8] * v.z + vals[12],
+		vals[1] * v.x + vals[5] * v.y + vals[ 9] * v.z + vals[13],
+		vals[2] * v.x + vals[6] * v.y + vals[10] * v.z + vals[14]
 	);
 }
 Vector4 Mat4x4::operator*(const Vector4& v)
